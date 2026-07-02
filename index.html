@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="th" data-default-theme="brief">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="รายงานวิเคราะห์งบประมาณที่ได้รับและงบต่อหัวของมหาวิทยาลัยในกำกับของรัฐ ปีงบประมาณ 2569 ถึง 2570">
+  <title>งบประมาณที่ได้รับและ ratio ต่อหัว 69→70 | มหาวิทยาลัยในกำกับ</title>
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('kmutt-theme');
+        var theme = stored || document.documentElement.getAttribute('data-default-theme') || 'brief';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (err) {
+        document.documentElement.setAttribute('data-theme', 'brief');
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Trirong:wght@500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root[data-theme="brief"]{
+     --bg:#EFEADD; --bg-image:none;
+     --card:#FBF9F3; --cardb:#E2DAC9;
+     --txt:#22201A; --muted:#7A7466; --dim:#A39A86;
+     --amber:#B8470E; --amber2:#C9621F; --teal:#0F6E56;
+     --green:#1F7A4E; --warn:#9A6312; --red:#A8301E; --plan:rgba(0,0,0,.08);
+     --disp:'Trirong',serif; --sans:'Sarabun','Tahoma',sans-serif; --mono:'IBM Plex Mono',monospace;
+     --radius:7px; --radius-lg:10px;
+     --track:#E5DECC; --thead-bg:#ECE5D5; --hairline:#EAE2D1; --row-hover:rgba(120,80,20,.05);
+     --accent-fill:#B8470E; --good-fill:#1F7A4E;
+     --accent-soft:rgba(184,71,14,.08); --accent-border:rgba(184,71,14,.35);
+     --warn-soft:rgba(154,99,18,.10); --danger-soft:rgba(168,48,30,.09); --danger-border:rgba(168,48,30,.30);
+     --teal-soft:rgba(15,110,86,.10); --teal-border:rgba(15,110,86,.30);
+     --det-bg:#F1ECE0; --shadow:0 1px 2px rgba(80,60,20,.05); --dot-glow:none; --toggle-blur:none;
+     --grid:rgba(0,0,0,.06); --axis:rgba(0,0,0,.20); --good-soft:rgba(31,122,78,.08); --good-border:rgba(31,122,78,.28);
+     --border-strong:#CFC6B2; --modal-bg:#FFFFFF; --modal-overlay:rgba(40,34,22,.42);
+     --tip-bg:rgba(255,253,248,.94); --tip-border:rgba(0,0,0,.14);
+     --ov:#6D5BC4; --ovbg:rgba(109,91,196,.10); --progbg:rgba(184,71,14,.07); --projbg:rgba(0,0,0,.028);
+     --sticky-bg:rgba(246,242,233,.86); --btn-bg:rgba(0,0,0,.04); --btn-hover:rgba(0,0,0,.08);
+    }
+    :root[data-theme="midnight"]{
+     --bg:#0A0B0E;
+     --bg-image:radial-gradient(60% 50% at 12% -8%,rgba(255,138,51,.13),transparent 60%),radial-gradient(50% 45% at 100% 0%,rgba(52,209,198,.08),transparent 55%);
+     --card:rgba(255,255,255,.04); --cardb:rgba(255,255,255,.08);
+     --txt:#E9E6DE; --muted:#888F9A; --dim:#5B616C;
+     --amber:#FF8A33; --amber2:#FFB061; --teal:#34D1C6;
+     --green:#46C08A; --warn:#E5A93C; --red:#F0604C; --plan:rgba(255,255,255,.10);
+     --disp:'Bai Jamjuree',sans-serif; --sans:'IBM Plex Sans Thai','Tahoma',sans-serif; --mono:'IBM Plex Mono',monospace;
+     --radius:13px; --radius-lg:18px;
+     --track:rgba(255,255,255,.05); --thead-bg:#11141A; --hairline:rgba(255,255,255,.05); --row-hover:rgba(255,255,255,.03);
+     --accent-fill:linear-gradient(90deg,#FF8A33,#FFB061); --good-fill:linear-gradient(90deg,rgba(70,192,138,.9),rgba(70,192,138,.6));
+     --accent-soft:rgba(255,138,51,.06); --accent-border:rgba(255,138,51,.42);
+     --warn-soft:rgba(229,169,60,.07); --danger-soft:rgba(240,96,76,.08); --danger-border:rgba(240,96,76,.30);
+     --teal-soft:rgba(52,209,198,.10); --teal-border:rgba(52,209,198,.30);
+     --det-bg:rgba(0,0,0,.22); --shadow:none; --dot-glow:0 0 10px 1px rgba(255,138,51,.7); --toggle-blur:blur(8px);
+     --grid:rgba(255,255,255,.06); --axis:rgba(255,255,255,.18); --good-soft:rgba(70,192,138,.08); --good-border:rgba(70,192,138,.22);
+     --border-strong:rgba(255,255,255,.18); --modal-bg:#11151C; --modal-overlay:rgba(0,0,0,.62);
+     --tip-bg:rgba(20,24,32,.80); --tip-border:rgba(255,255,255,.18);
+     --ov:#8E7BE8; --ovbg:rgba(142,123,232,.13); --progbg:rgba(255,138,51,.10); --projbg:rgba(255,255,255,.035);
+     --sticky-bg:rgba(11,13,18,.86); --btn-bg:rgba(255,255,255,.06); --btn-hover:rgba(255,255,255,.12);
+    }
+    html.theme-switching, html.theme-switching * { transition: none !important; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; color-scheme: light dark; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      background-image: var(--bg-image);
+      color: var(--txt);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.5;
+      font-kerning: normal;
+      min-width: 320px;
+    }
+    button, input, select { font: inherit; }
+    button { color: inherit; }
+    a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .skip {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 1200;
+      background: var(--modal-bg);
+      color: var(--txt);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+    }
+    .skip:focus { top: 16px; }
+    .wrap { max-width: 1160px; padding: 30px 26px 80px; margin: 0 auto; }
+    .theme-toggle {
+      position: fixed;
+      top: 16px;
+      right: 18px;
+      z-index: 1000;
+      min-height: 44px;
+      border: 1px solid var(--cardb);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: color-mix(in srgb, var(--card) 78%, transparent);
+      color: var(--txt);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--toggle-blur);
+      cursor: pointer;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-toggle:hover { background: var(--btn-hover); }
+    .theme-toggle:focus-visible,
+    .lnk:focus-visible,
+    .seg button:focus-visible,
+    summary:focus-visible,
+    .row-toggle:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+    .topbar {
+      padding-right: 130px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .topbar .dot {
+      inline-size: 7px;
+      block-size: 7px;
+      background: var(--amber);
+      border-radius: 50%;
+      box-shadow: var(--dot-glow);
+      flex: 0 0 auto;
+    }
+    .navstrip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 22px;
+      padding: 10px 0 16px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .nav-left { display: flex; flex-wrap: wrap; gap: 8px; }
+    .lnk {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--teal-border);
+      color: var(--teal);
+      background: transparent;
+      border-radius: 999px;
+      padding: 8px 13px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .lnk:hover { background: var(--teal-soft); }
+    .lnk.amb { color: var(--amber); border-color: var(--accent-border); }
+    .lnk.amb:hover { background: var(--accent-soft); }
+    .asof {
+      color: var(--dim);
+      font-family: var(--mono);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .hero {
+      padding: 44px 0 28px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 360px);
+      align-items: end;
+    }
+    h1 {
+      font-family: var(--disp);
+      font-size: clamp(26px, 3.4vw, 34px);
+      line-height: 1.08;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0;
+      max-width: 880px;
+    }
+    .hsub {
+      margin: 13px 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .headline-fact {
+      border-top: 3px solid var(--txt);
+      border-bottom: 1px solid var(--border-strong);
+      padding: 15px 0 16px;
+      display: grid;
+      gap: 4px;
+    }
+    .headline-fact .label {
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .headline-fact .value {
+      font-family: var(--mono);
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.08;
+      color: var(--red);
+    }
+    .headline-fact .value span {
+      font-family: var(--sans);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+    }
+    .headline-fact .note { color: var(--dim); font-size: 11.5px; }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      border-top: 3px solid var(--txt);
+      border-bottom: 1px solid var(--border-strong);
+      margin: 10px 0 34px;
+    }
+    .kpi {
+      padding: 15px 16px 16px;
+      min-height: 106px;
+      border-left: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .kpi:first-child { border-left: 0; }
+    .kpi .label {
+      color: var(--muted);
+      font-size: 11px;
+      min-height: 30px;
+    }
+    .kpi .num {
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 1.05;
+      font-variant-numeric: tabular-nums;
+    }
+    .kpi .num span {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 2px;
+    }
+    .kpi .foot { color: var(--dim); font-size: 11.5px; }
+    .neg { color: var(--red); }
+    .pos { color: var(--green); }
+    .warn { color: var(--warn); }
+    .muted { color: var(--muted); }
+    section { margin-top: 44px; }
+    .section-head {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 14px;
+      align-items: baseline;
+      padding-top: 15px;
+      border-top: 2px solid var(--txt);
+    }
+    .section-no {
+      color: var(--dim);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .12em;
+    }
+    h2 {
+      margin: 0;
+      font-family: var(--disp);
+      font-size: clamp(20px, 2.4vw, 27px);
+      line-height: 1.16;
+    }
+    .section-lede {
+      margin: 9px 0 0;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .panel-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(330px, .95fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .panel,
+    details.grp {
+      background: var(--card);
+      border: 1px solid var(--cardb);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+    .panel { padding: 18px; }
+    .panel h3,
+    .rank-panel h3 {
+      margin: 0 0 4px;
+      font-family: var(--disp);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .panel-sub {
+      color: var(--muted);
+      font-size: 12.5px;
+      margin-bottom: 14px;
+    }
+    .storyline {
+      display: grid;
+      gap: 11px;
+      margin-top: 10px;
+    }
+    .story-row {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr) 112px;
+      gap: 12px;
+      align-items: center;
+    }
+    .story-label { color: var(--muted); font-size: 12px; }
+    .story-value {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      font-variant-numeric: tabular-nums;
+    }
+    .cmpbar {
+      position: relative;
+      height: 32px;
+      background: var(--track);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      overflow: visible;
+    }
+    .cmpbar .zero {
+      position: absolute;
+      top: -5px;
+      bottom: -5px;
+      width: 2px;
+      background: var(--teal);
+    }
+    .cmpbar .fill {
+      position: absolute;
+      top: 6px;
+      height: 18px;
+      border-radius: 3px;
+      background: var(--accent-fill);
+    }
+    .cmpbar .fill.good { background: var(--good-fill); }
+    .finding-list {
+      display: grid;
+      gap: 11px;
+    }
+    .fl {
+      border-left: 3px solid var(--warn);
+      background: var(--warn-soft);
+      padding: 11px 12px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--txt);
+    }
+    .fl.danger {
+      border-left-color: var(--red);
+      background: var(--danger-soft);
+    }
+    .fl.good {
+      border-left-color: var(--green);
+      background: var(--good-soft);
+    }
+    .fl strong { font-weight: 600; }
+    .chart-panel { padding: 0; overflow: hidden; }
+    .chart-toolbar {
+      padding: 16px 18px 8px;
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .seg {
+      display: inline-flex;
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 3px;
+      background: var(--btn-bg);
+    }
+    .seg button {
+      min-height: 34px;
+      min-width: 68px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+    .seg button[aria-pressed="true"] {
+      background: var(--txt);
+      color: var(--bg);
+    }
+    .chart-frame {
+      position: relative;
+      min-height: 440px;
+      padding: 4px 8px 12px;
+      overflow-x: auto;
+    }
+    svg.chart {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 390px;
+    }
+    .axis text,
+    .label-text {
+      fill: var(--muted);
+      font-family: var(--sans);
+      font-size: 11px;
+    }
+    .tick-line { stroke: var(--grid); stroke-width: 1; }
+    .axis-line { stroke: var(--axis); stroke-width: 1; }
+    .point { cursor: pointer; }
+    .point:focus { outline: none; }
+    .point:focus-visible { filter: drop-shadow(0 0 0.25rem var(--teal)); }
+    .tooltip {
+      position: fixed;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .07s ease-out;
+      z-index: 1100;
+      max-width: min(320px, calc(100vw - 28px));
+      border: 1px solid var(--tip-border);
+      background: var(--tip-bg);
+      color: var(--txt);
+      border-radius: 11px;
+      box-shadow: 0 16px 42px -14px rgba(0,0,0,.5);
+      backdrop-filter: blur(13px) saturate(1.4);
+      padding: 10px 11px;
+      font-size: 12px;
+    }
+    .tooltip .tt-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .tooltip .tt-num {
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+    }
+    .rank-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .rank-panel {
+      border-top: 3px solid var(--txt);
+      border-bottom: 1px solid var(--border-strong);
+      padding: 14px 0 12px;
+    }
+    .rank-list {
+      display: grid;
+      gap: 9px;
+      margin-top: 12px;
+    }
+    .rank-item {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr) 86px;
+      gap: 9px;
+      align-items: center;
+    }
+    .rank-no {
+      color: var(--dim);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+    .rank-name {
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .rank-val {
+      text-align: right;
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+    }
+    .rankbar {
+      grid-column: 2 / 4;
+      height: 6px;
+      background: var(--track);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .rankbar span {
+      display: block;
+      height: 100%;
+      background: var(--accent-fill);
+      min-width: 2px;
+    }
+    details.grp {
+      margin-top: 22px;
+      overflow: clip;
+    }
+    details.grp > summary {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 15px 18px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+    details.grp > summary::-webkit-details-marker { display: none; }
+    details.grp > summary:hover { background: var(--row-hover); }
+    details.grp .chev {
+      color: var(--muted);
+      transform: rotate(0deg);
+      transition: transform .16s ease-out, color .16s ease-out;
+      font-family: var(--mono);
+    }
+    details.grp[open] .chev { transform: rotate(90deg); color: var(--amber); }
+    details.grp .inside {
+      padding: 0 18px 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .table-tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .search {
+      min-height: 42px;
+      width: min(360px, 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      background: var(--card);
+      color: var(--txt);
+      padding: 9px 12px;
+    }
+    .table-wrap {
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      overflow: auto;
+      background: var(--card);
+      max-height: 680px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1050px;
+      font-size: 12.5px;
+    }
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      background: var(--thead-bg);
+      color: var(--muted);
+      font-size: 10.5px;
+      font-weight: 500;
+      text-align: right;
+      padding: 10px 9px;
+      border-bottom: 1px solid var(--border-strong);
+      white-space: nowrap;
+    }
+    thead th:first-child { text-align: left; }
+    tbody td {
+      padding: 9px;
+      border-bottom: 1px solid var(--hairline);
+      text-align: right;
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    tbody td.name {
+      text-align: left;
+      font-family: var(--sans);
+      font-weight: 500;
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: var(--card);
+    }
+    tbody tr:hover td { background: var(--row-hover); }
+    tbody tr:hover td.name { background: color-mix(in srgb, var(--row-hover) 72%, var(--card)); }
+    .row-toggle {
+      width: 100%;
+      min-height: 32px;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      color: var(--txt);
+      cursor: pointer;
+      padding: 0;
+    }
+    .det-row { display: none; }
+    .det-row.on { display: table-row; }
+    .det-row td {
+      background: var(--det-bg);
+      white-space: normal;
+      text-align: left;
+      font-family: var(--sans);
+      padding: 13px;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .flags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 9px;
+    }
+    .flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 24px;
+      border: 1px solid var(--hairline);
+      border-radius: 999px;
+      padding: 3px 8px;
+      color: var(--muted);
+      font-size: 11.5px;
+    }
+    .flag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--warn);
+      flex: 0 0 auto;
+    }
+    .flag.danger::before { background: var(--red); }
+    .flag.good::before { background: var(--green); }
+    .mini-spark {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .spark-line {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr) 82px;
+      gap: 8px;
+      align-items: center;
+    }
+    .spark-track {
+      position: relative;
+      height: 8px;
+      background: var(--track);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .spark-fill {
+      position: absolute;
+      inset-block: 0;
+      left: 0;
+      background: var(--accent-fill);
+      border-radius: inherit;
+    }
+    .spark-fill.good { background: var(--good-fill); }
+    .method {
+      margin-top: 54px;
+      padding-top: 17px;
+      border-top: 2px solid var(--txt);
+      color: var(--dim);
+      font-size: 11.5px;
+      line-height: 1.7;
+    }
+    .method strong { color: var(--muted); }
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; align-items: start; }
+      .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .panel-grid { grid-template-columns: 1fr; }
+      .rank-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 820px) {
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .kpi:nth-child(odd) { border-left: 0; }
+      .chart-toolbar { flex-direction: column; }
+    }
+    @media (max-width: 780px) {
+      .wrap { padding: 24px 18px 70px; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .story-row { grid-template-columns: 1fr; gap: 6px; }
+      .story-value { text-align: left; }
+      .topbar { padding-right: 116px; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 13.5px; }
+      .navstrip { align-items: flex-start; flex-direction: column; }
+      .asof { white-space: normal; }
+      .theme-toggle { right: 12px; top: 12px; padding-inline: 12px; }
+      .topbar { padding-right: 104px; letter-spacing: .12em; }
+      .kpis { grid-template-columns: 1fr; }
+      .kpi { border-left: 0; border-top: 1px solid var(--hairline); }
+      .kpi:first-child { border-top: 0; }
+      .rank-item { grid-template-columns: 24px minmax(0, 1fr) 78px; }
+      svg.chart { min-width: 720px; }
+      .chart-frame { min-height: 360px; }
+    }
+    @media print {
+      .theme-toggle, .nav-left, .seg, .search, .row-toggle .hint { display: none !important; }
+      body { background: #fff; color: #000; }
+      .wrap { max-width: none; padding: 18px; }
+      .panel, details.grp { break-inside: avoid; box-shadow: none; }
+      .chart-frame { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="สลับธีม"><span aria-hidden="true">☾</span><span>มืด</span></button>
+  <div class="wrap">
+    <header>
+      <div class="topbar"><span class="dot" aria-hidden="true"></span><span>KMUTT BUDGET ANALYTICS</span></div>
+      <nav class="navstrip" aria-label="ทางลัดในรายงาน">
+        <div class="nav-left">
+          <a class="lnk amb" href="#main">ภาพรวม 2570*</a>
+          <a class="lnk" href="#matrix">เมทริกซ์ต่อหัว</a>
+          <a class="lnk" href="#deep-dive">ตารางเจาะรายสถาบัน</a>
+        </div>
+        <div class="asof">ข้อมูล ณ 2 ก.ค. 2569</div>
+      </nav>
+      <div class="hero" id="main">
+        <div>
+          <h1>งบประมาณที่ได้รับและ ratio ต่อหัว ปีงบประมาณ 2569 → 2570*</h1>
+          <p class="hsub">รายงานนี้จัดภาพรวมก่อนแล้วค่อยเปิดให้เจาะรายสถาบัน โดยเน้น 2 คำถามหลัก: งบประมาณที่ได้รับเปลี่ยนอย่างไร และเมื่อนำไปเทียบกับจำนวนนักศึกษา/อาจารย์แล้ว “ความเข้มข้นต่อหัว” อยู่ตรงไหนของระบบ</p>
+        </div>
+        <div class="headline-fact">
+          <div class="label">ข้อค้นพบหลัก</div>
+          <div class="value">-3.95<span> % งบรวมทั้งระบบ</span></div>
+          <div class="note">แรงกดหลักมาจากงบดำเนินงาน + ลงทุน ไม่ใช่งบบุคลากร</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="kpis" aria-label="ตัวเลขสรุป">
+      <div class="kpi">
+        <div class="label">งบรวม 2570*</div>
+        <div class="num" data-tip="74,283,970,000 บาท">74,284<span> ลบ.</span></div>
+        <div class="foot">25 สถาบันในชีตหลัก</div>
+      </div>
+      <div class="kpi">
+        <div class="label">เปลี่ยนแปลงจาก 2569</div>
+        <div class="num neg">-3,052.9<span> ลบ.</span></div>
+        <div class="foot neg">-3.95%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">งบบุคลากร</div>
+        <div class="num pos">+956.0<span> ลบ.</span></div>
+        <div class="foot">เพิ่ม +1.78%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">ดำเนินงาน + ลงทุน</div>
+        <div class="num neg">-4,008.9<span> ลบ.</span></div>
+        <div class="foot">ลด -16.91%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">มัธยฐานงบ/นักศึกษา 2570*</div>
+        <div class="num">111,019<span> บ./คน</span></div>
+        <div class="foot">ไม่รวมแถวที่ไม่มี headcount</div>
+      </div>
+      <div class="kpi">
+        <div class="label">งบรวม vs งบ/นักศึกษา</div>
+        <div class="num">0.004<span> r</span></div>
+        <div class="foot">แทบไม่สัมพันธ์กัน</div>
+      </div>
+    </div>
+
+    <section aria-labelledby="story-title">
+      <div class="section-head">
+        <div class="section-no">01</div>
+        <h2 id="story-title">งบลดแบบมีโครงสร้าง: บุคลากรเพิ่ม แต่หมวดดำเนินงานและลงทุนถูกกดลง</h2>
+      </div>
+      <p class="section-lede">การอ่านงบรวมอย่างเดียวทำให้เห็นเพียงการลดลงสุทธิ แต่เมื่อแยกองค์ประกอบจะเห็นว่าแรงลดแทบทั้งหมดมาจากหมวดดำเนินงาน + ลงทุน ขณะที่งบบุคลากรรวมยังเพิ่มขึ้น</p>
+      <div class="panel-grid">
+        <div class="panel">
+          <h3>Decomposition ของงบ 2569 → 2570*</h3>
+          <div class="panel-sub">แถบยาวเทียบกับช่วงเปลี่ยนแปลงใหญ่สุดในหน่วยล้านบาท</div>
+          <div class="storyline" id="budgetStory"></div>
+        </div>
+        <div class="panel finding-list">
+          <div class="fl danger"><strong>ประเด็นที่ 1:</strong> งบรวมลด -3,052.9 ลบ. แม้หมวดบุคลากรเพิ่ม +956.0 ลบ. หมายความว่าแรงตัดจริงถูกดูดซับอยู่ในงบดำเนินงานและลงทุน</div>
+          <div class="fl danger"><strong>ประเด็นที่ 2:</strong> สถาบันดนตรีกัลยาณิวัฒนาถูกจัดเป็น outlier ฝั่งงบลดหนัก (-25.67%) และงบต่อหัวสูงมากเพราะฐานนักศึกษามีขนาดเล็ก</div>
+          <div class="fl good"><strong>ประเด็นที่ 3:</strong> อุบลเป็น outlier ฝั่งบวก (+1.94%) แต่ยังอยู่ในกลุ่มงบต่อหัวนักศึกษาต่ำสุดของชุดข้อมูล</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="matrix" aria-labelledby="matrix-title">
+      <div class="section-head">
+        <div class="section-no">02</div>
+        <h2 id="matrix-title">เมทริกซ์งบรวมกับงบต่อหัว: ขนาดงบไม่ใช่ตัวแทนความเข้มข้นต่อหัว</h2>
+      </div>
+      <p class="section-lede">ใช้จุดแต่ละจุดแทนสถาบัน แกน X คือ งบรวม 2570* แกน Y คือ งบต่อหัว และขนาดจุดแทนจำนวนคนในตัวหาร เพื่อแยก “งบใหญ่” ออกจาก “งบต่อหัวสูง”</p>
+      <div class="panel chart-panel">
+        <div class="chart-toolbar">
+          <div>
+            <h3 id="matrixHeading">งบรวมเทียบงบต่อนักศึกษา</h3>
+            <div class="panel-sub" id="matrixSub">เส้นอ้างอิงคือมัธยฐานของชุดข้อมูล</div>
+          </div>
+          <div class="seg" role="group" aria-label="เลือกตัวหาร">
+            <button type="button" data-denom="student" aria-pressed="true">นักศึกษา</button>
+            <button type="button" data-denom="faculty" aria-pressed="false">อาจารย์</button>
+          </div>
+        </div>
+        <div class="chart-frame">
+          <svg class="chart" id="matrixChart" viewBox="0 0 980 460" role="img" aria-labelledby="matrixHeading matrixSub"></svg>
+        </div>
+      </div>
+      <div class="rank-grid" aria-label="ตารางอันดับสรุป">
+        <div class="rank-panel">
+          <h3>งบรวม 2570* สูงสุด</h3>
+          <div class="panel-sub">ล้านบาท</div>
+          <div class="rank-list" id="rankTotal"></div>
+        </div>
+        <div class="rank-panel">
+          <h3>งบต่อนักศึกษา 2570* สูงสุด</h3>
+          <div class="panel-sub">บาทต่อคน</div>
+          <div class="rank-list" id="rankStudent"></div>
+        </div>
+        <div class="rank-panel">
+          <h3>งบลดลงหนักสุด</h3>
+          <div class="panel-sub">เปลี่ยนแปลงงบรวม 69→70</div>
+          <div class="rank-list" id="rankDrop"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deep-dive" aria-labelledby="deep-title">
+      <div class="section-head">
+        <div class="section-no">03</div>
+        <h2 id="deep-title">Deep dive รายสถาบัน: เปิดแถวเพื่อดูเหตุผลและธงวิเคราะห์</h2>
+      </div>
+      <p class="section-lede">ตารางนี้คงตัวเลขหลักไว้ให้ตรวจสอบได้ และเพิ่มแถว drill-down สำหรับอ่านเหตุผล เช่น สัดส่วนการลดลงมาจากหมวดใด สถาบันอยู่ quadrant ใด และมีข้อมูลต่อหัวขาดหายหรือไม่</p>
+      <details class="grp" open>
+        <summary><span class="chev" aria-hidden="true">›</span><strong>ตารางวิเคราะห์ 25 สถาบัน</strong><span class="muted">คลิกชื่อสถาบันเพื่อกางรายละเอียด</span></summary>
+        <div class="inside">
+          <div class="table-tools">
+            <input class="search" id="searchBox" type="search" placeholder="ค้นหาชื่อสถาบัน" aria-label="ค้นหาชื่อสถาบัน">
+            <div class="asof">ตัวเลขเงินหน่วยหลักเป็นล้านบาท · hover เพื่อดูบาทเต็ม</div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>มหาวิทยาลัย</th>
+                  <th>งบ 69</th>
+                  <th>งบ 70*</th>
+                  <th>เปลี่ยนแปลง</th>
+                  <th>บุคลากร Δ</th>
+                  <th>ดำเนินงาน+ลงทุน Δ</th>
+                  <th>นศ.</th>
+                  <th>อาจารย์</th>
+                  <th>งบ/นศ. 70*</th>
+                  <th>งบ/อจ. 70*</th>
+                </tr>
+              </thead>
+              <tbody id="dataBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <footer class="method">
+      <p><strong>นิยาม:</strong> 2570* อ้างอิงมติ ครม. 2 มิ.ย. 2569; งบต่อหัวคำนวณจากงบประมาณรวมคูณ 1,000,000 หารด้วยจำนวนนักศึกษาหรืออาจารย์จาก Google Form <code>sustainable_ratio_2026-07-02.csv</code></p>
+      <p><strong>ข้อจำกัด:</strong> หากจำนวนนักศึกษา/อาจารย์ไม่มีใน Mapping ระบบจะแสดงเป็นไม่มีข้อมูล และไม่ใช้ในการคำนวณงบต่อหัวหรือเมทริกซ์ต่อหัว</p>
+      <p><strong>แหล่งไฟล์:</strong> <code>20260602 Gov Budget to Autonomous Univ - Sum V2_with_ratio_69_70.xlsx</code> และ <code>sustainable_ratio_2026-07-02.csv</code></p>
+    </footer>
+  </div>
+  <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+  <script id="budgetData" type="application/json">{"generatedAt":"2026-07-02","asOf":"2 ก.ค. 2569","budgetResolution":"มติ ครม. 2 มิ.ย. 2569","totals":{"total69":77336.87000000002,"total70":74283.97,"totalDelta":-3052.9,"totalChange":-0.039475349855767616,"personnelDelta":956.0200000000007,"opInvDelta":-4008.92},"medians":{"total70":1971.71,"change":-0.03617258602649397,"perStudent70":111019.30372684667,"perFaculty70":1996804.6283934135},"quartiles":{"total70":{"q1":1173.91,"q3":4552.26},"change":{"q1":-0.04824514290215633,"q3":-0.027170810651758172},"perStudent70":{"q1":63663.22844262264,"q3":141340.78554345053},"perFaculty70":{"q1":1785851.4983196417,"q3":2442667.9569611545}},"correlations":{"total70VsPerStudent70":0.004218342944059852,"total70VsPerFaculty70":-0.09634453477730162,"studentsVsPerStudent70":-0.39702259916640753,"facultyVsPerFaculty70":-0.25009399325116694,"changeVsPerStudent70":-0.9073290645733957},"quadrants":{"bigBudgetHighIntensity":["จุฬาลงกรณ์","ขอนแก่น","เชียงใหม่","มทส.","มหิดล","แม่ฟ้าหลวง","มศว.","สงขลานครินทร์"],"bigBudgetLowIntensity":["เกษตรศาสตร์","มจพ.","ธรรมศาสตร์","บูรพา","สจล."],"smallBudgetHighIntensity":["วลัยลักษณ์","สวนดุสิต","สถาบันการพยาบาลศรีสวรินทิราฯ","สถาบันดนตรีกัลยาณิวัฒนา"],"smallBudgetLowIntensity":["ทักษิณ","มจธ.","พะเยา","แม่โจ้","ศิลปากร","อุบล","สถาบันเทคโนโลยีจิตรลดา","NIDA"]},"outliers":{"total70":{"key":"total70","q1":1173.91,"q3":4552.26,"low":-3893.6150000000007,"high":9619.785,"outliers":[{"university":"มหิดล","value":14458.82}]},"change":{"key":"change","q1":-0.04824514290215633,"q3":-0.027170810651758172,"low":-0.07985664127775356,"high":0.004440687723839064,"outliers":[{"university":"อุบล","value":0.019438644255505722},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","value":-0.25671455340412247}]},"perStudent70":{"key":"perStudent70","q1":63663.22844262264,"q3":141340.78554345053,"low":-52853.1072086192,"high":257857.1211946924,"outliers":[{"university":"มหิดล","value":405133.79472666647},{"university":"สถาบันการพยาบาลศรีสวรินทิราฯ","value":386511.36363636365},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","value":1237600}]},"perFaculty70":{"key":"perFaculty70","q1":1785851.4983196417,"q3":2442667.9569611545,"low":800626.8103573725,"high":3427892.6449234234,"outliers":[{"university":"มทส.","value":3644523.8095238092},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","value":11900000}]}},"records":[{"university":"จุฬาลงกรณ์","personnel69":4536.74,"personnel70":4575.66,"personnelChange":0.008578847366170438,"opInv69":1541.62,"opInv70":1282.83,"opInvChange":-0.16786886521970393,"total69":6078.36,"total70":5858.49,"change":-0.03617258602649397,"students":42360,"faculty":3099,"perStudent69":143492.9178470255,"perFaculty69":1961393.9980638917,"perStudent70":138302.40793201132,"perFaculty70":1890445.3049370765,"perStudentChange":-0.03617258602649409,"perFacultyChange":-0.03617258602649398,"totalDelta":-219.8699999999999,"personnelDelta":38.92000000000007,"opInvDelta":-258.78999999999996,"total70Percentile":0.875,"perStudent70Percentile":0.7272727272727273,"changePercentile":0.5},{"university":"เกษตรศาสตร์","personnel69":3858.17,"personnel70":3952.2,"personnelChange":0.02437165806587054,"opInv69":2131.97,"opInv70":1998.89,"opInvChange":-0.06242114101042684,"total69":5990.139999999999,"total70":5951.09,"change":-0.00651904629941859,"students":74800,"faculty":3296,"perStudent69":80082.08556149731,"perFaculty69":1817396.844660194,"perStudent70":79560.02673796791,"perFaculty70":1805549.150485437,"perStudentChange":-0.006519046299418574,"perFacultyChange":-0.006519046299418574,"totalDelta":-39.04999999999927,"personnelDelta":94.02999999999975,"opInvDelta":-133.0799999999997,"total70Percentile":0.9166666666666666,"perStudent70Percentile":0.36363636363636365,"changePercentile":0.9166666666666666},{"university":"ขอนแก่น","personnel69":3939.21,"personnel70":3936.64,"personnelChange":-0.0006524150781502291,"opInv69":1578.13,"opInv70":1223.23,"opInvChange":-0.22488641620145366,"total69":5517.34,"total70":5159.87,"change":-0.06479027937375624,"students":39164,"faculty":2035,"perStudent69":140877.8470023491,"perFaculty69":2711223.587223587,"perStudent70":131750.3319374936,"perFaculty70":2535562.6535626533,"perStudentChange":-0.06479027937375625,"perFacultyChange":-0.06479027937375625,"totalDelta":-357.47000000000025,"personnelDelta":-2.5700000000001637,"opInvDelta":-354.9000000000001,"total70Percentile":0.7916666666666666,"perStudent70Percentile":0.6363636363636364,"changePercentile":0.08333333333333333},{"university":"เชียงใหม่","personnel69":4814.92,"personnel70":4869.19,"personnelChange":0.011271215305757837,"opInv69":1367.68,"opInv70":1141.53,"opInvChange":-0.1653530065512401,"total69":6182.6,"total70":6010.719999999999,"change":-0.027800601688610132,"students":33489,"faculty":2558,"perStudent69":184615.8440084804,"perFaculty69":2416966.379984363,"perStudent70":179483.41246379405,"perFaculty70":2349773.2603596556,"perStudentChange":-0.027800601688610094,"perFacultyChange":-0.027800601688610205,"totalDelta":-171.88000000000102,"personnelDelta":54.26999999999953,"opInvDelta":-226.1500000000001,"total70Percentile":0.9583333333333334,"perStudent70Percentile":0.8636363636363636,"changePercentile":0.7083333333333334},{"university":"ทักษิณ","personnel69":912.04,"personnel70":924.26,"personnelChange":0.01339853515196705,"opInv69":297.42,"opInv70":249.65,"opInvChange":-0.1606146190572255,"total69":1209.46,"total70":1173.91,"change":-0.029393282952722664,"students":20315,"faculty":534,"perStudent69":59535.31873000246,"perFaculty69":2264906.3670411985,"perStudent70":57785.38026089097,"perFaculty70":2198333.3333333335,"perStudentChange":-0.029393282952722588,"perFacultyChange":-0.0293932829527227,"totalDelta":-35.549999999999955,"personnelDelta":12.220000000000027,"opInvDelta":-47.77000000000001,"total70Percentile":0.25,"perStudent70Percentile":0.09090909090909091,"changePercentile":0.5833333333333334},{"university":"มจธ.","personnel69":1112.77,"personnel70":1141.02,"personnelChange":0.025387097064083323,"opInv69":492.78,"opInv70":443.22,"opInvChange":-0.10057226348471925,"total69":1605.55,"total70":1584.24,"change":-0.013272710286194728,"students":15500,"faculty":897,"perStudent69":103583.87096774194,"perFaculty69":1789910.8138238573,"perStudent70":102209.03225806452,"perFaculty70":1766153.8461538462,"perStudentChange":-0.013272710286194811,"perFacultyChange":-0.0132727102861947,"totalDelta":-21.309999999999945,"personnelDelta":28.25,"opInvDelta":-49.559999999999945,"total70Percentile":0.375,"perStudent70Percentile":0.45454545454545453,"changePercentile":0.8333333333333334},{"university":"มจพ.","personnel69":1610.78,"personnel70":1629.51,"personnelChange":0.011627906976744198,"opInv69":505.76,"opInv70":459.62,"opInvChange":-0.09122904144258144,"total69":2116.54,"total70":2089.13,"change":-0.012950381282659367,"students":33572,"faculty":1138,"perStudent69":63044.79923745979,"perFaculty69":1859876.9771528998,"perStudent70":62228.34504944597,"perFaculty70":1835790.8611599298,"perStudentChange":-0.012950381282659462,"perFacultyChange":-0.012950381282659351,"totalDelta":-27.409999999999854,"personnelDelta":18.730000000000018,"opInvDelta":-46.139999999999986,"total70Percentile":0.625,"perStudent70Percentile":0.18181818181818182,"changePercentile":0.875},{"university":"มทส.","personnel69":1186.06,"personnel70":1238.05,"personnelChange":0.043834207375680834,"opInv69":924.36,"opInv70":751.86,"opInvChange":-0.1866156043100091,"total69":2110.42,"total70":1989.9099999999999,"change":-0.05710237772576085,"students":17924,"faculty":546,"perStudent69":117742.69136353492,"perFaculty69":3865238.095238095,"perStudent70":111019.30372684667,"perFaculty70":3644523.8095238092,"perStudentChange":-0.05710237772576077,"perFacultyChange":-0.05710237772576077,"totalDelta":-120.51000000000022,"personnelDelta":51.99000000000001,"opInvDelta":-172.5,"total70Percentile":0.5416666666666666,"perStudent70Percentile":0.5,"changePercentile":0.125},{"university":"ธรรมศาสตร์","personnel69":3158,"personnel70":3156.96,"personnelChange":-0.0003293223559214578,"opInv69":1679.9,"opInv70":1329.86,"opInvChange":-0.2083695458062981,"total69":4837.9,"total70":4486.82,"change":-0.0725686764918663,"students":44235,"faculty":2247,"perStudent69":109368.14739459704,"perFaculty69":2153048.5091232755,"perStudent70":101431.44568780377,"perFaculty70":1996804.6283934135,"perStudentChange":-0.07256867649186627,"perFacultyChange":-0.07256867649186627,"totalDelta":-351.0799999999999,"personnelDelta":-1.0399999999999636,"opInvDelta":-350.0400000000002,"total70Percentile":0.7083333333333334,"perStudent70Percentile":0.4090909090909091,"changePercentile":0.041666666666666664},{"university":"บูรพา","personnel69":1549.86,"personnel70":1601.88,"personnelChange":0.033564321938755894,"opInv69":434.32,"opInv70":369.83,"opInvChange":-0.14848498802726104,"total69":1984.1799999999998,"total70":1971.71,"change":-0.006284712072493323,"students":30782,"faculty":1463,"perStudent69":64459.0994737184,"perFaculty69":1356240.6015037592,"perStudent70":64053.992593073875,"perFaculty70":1347717.019822283,"perStudentChange":-0.00628471207249337,"perFacultyChange":-0.006284712072493259,"totalDelta":-12.4699999999998,"personnelDelta":52.02000000000021,"opInvDelta":-64.49000000000001,"total70Percentile":0.5,"perStudent70Percentile":0.2727272727272727,"changePercentile":0.9583333333333334},{"university":"พะเยา","personnel69":898.69,"personnel70":935.55,"personnelChange":0.04101525553861721,"opInv69":497.72,"opInv70":393.49,"opInvChange":-0.20941493209033193,"total69":1396.41,"total70":1329.04,"change":-0.04824514290215633,"students":22604,"faculty":966,"perStudent69":61777.119093965666,"perFaculty69":1445559.0062111802,"perStudent70":58796.67315519377,"perFaculty70":1375817.8053830229,"perStudentChange":-0.0482451429021562,"perFacultyChange":-0.0482451429021562,"totalDelta":-67.37000000000012,"personnelDelta":36.8599999999999,"opInvDelta":-104.23000000000002,"total70Percentile":0.2916666666666667,"perStudent70Percentile":0.13636363636363635,"changePercentile":0.25},{"university":"มหิดล","personnel69":10804.83,"personnel70":10954.78,"personnelChange":0.013878052685697112,"opInv69":4412.79,"opInv70":3504.04,"opInvChange":-0.2059354739291922,"total69":15217.619999999999,"total70":14458.82,"change":-0.049863250626576254,"students":35689,"faculty":4266,"perStudent69":426395.24783546745,"perFaculty69":3567187.0604781993,"perStudent70":405133.79472666647,"perFaculty70":3389315.518049695,"perStudentChange":-0.04986325062657615,"perFacultyChange":-0.04986325062657626,"totalDelta":-758.7999999999993,"personnelDelta":149.95000000000073,"opInvDelta":-908.75,"total70Percentile":1,"perStudent70Percentile":0.9545454545454546,"changePercentile":0.20833333333333334},{"university":"แม่โจ้","personnel69":991.61,"personnel70":1011.48,"personnelChange":0.02003811982533456,"opInv69":463.79,"opInv70":388.36,"opInvChange":-0.16263826300696438,"total69":1455.4,"total70":1399.8400000000001,"change":-0.0381750721451147,"students":22124,"faculty":655,"perStudent69":65783.76423793165,"perFaculty69":2221984.7328244275,"perStudent70":63272.46429217141,"perFaculty70":2137160.305343512,"perStudentChange":-0.03817507214511451,"perFacultyChange":-0.03817507214511451,"totalDelta":-55.559999999999945,"personnelDelta":19.870000000000005,"opInvDelta":-75.43,"total70Percentile":0.3333333333333333,"perStudent70Percentile":0.22727272727272727,"changePercentile":0.4166666666666667},{"university":"แม่ฟ้าหลวง","personnel69":1461.46,"personnel70":1534.07,"personnelChange":0.049683193518809884,"opInv69":655.91,"opInv70":508.01,"opInvChange":-0.22548825296153432,"total69":2117.37,"total70":2042.08,"change":-0.03555826331722843,"students":14931,"faculty":785,"perStudent69":141810.32750653004,"perFaculty69":2697286.6242038216,"perStudent70":136767.79853995043,"perFaculty70":2601375.796178344,"perStudentChange":-0.035558263317228556,"perFacultyChange":-0.035558263317228334,"totalDelta":-75.28999999999996,"personnelDelta":72.6099999999999,"opInvDelta":-147.89999999999998,"total70Percentile":0.5833333333333334,"perStudent70Percentile":0.6818181818181818,"changePercentile":0.5416666666666666},{"university":"วลัยลักษณ์","personnel69":1113.5,"personnel70":1153.23,"personnelChange":0.03568028738212844,"opInv69":723.99,"opInv70":595.93,"opInvChange":-0.17688089614497446,"total69":1837.49,"total70":1749.1599999999999,"change":-0.048071009910258096,"students":15523,"faculty":877,"perStudent69":118372.09302325582,"perFaculty69":2095199.543899658,"perStudent70":112681.82696643689,"perFaculty70":1994481.185860889,"perStudentChange":-0.048071009910258145,"perFacultyChange":-0.048071009910258145,"totalDelta":-88.33000000000015,"personnelDelta":39.73000000000002,"opInvDelta":-128.06000000000006,"total70Percentile":0.4583333333333333,"perStudent70Percentile":0.5454545454545454,"changePercentile":0.2916666666666667},{"university":"มศว.","personnel69":2734.16,"personnel70":2815.51,"personnelChange":0.029753196594200913,"opInv69":2047.97,"opInv70":1736.75,"opInvChange":-0.15196511667651383,"total69":4782.13,"total70":4552.26,"change":-0.04806853849644403,"students":31388,"faculty":2034,"perStudent69":152355.3587358226,"perFaculty69":2351096.361848574,"perStudent70":145031.8593092902,"perFaculty70":2238082.5958702066,"perStudentChange":-0.04806853849644399,"perFacultyChange":-0.04806853849644399,"totalDelta":-229.8699999999999,"personnelDelta":81.35000000000036,"opInvDelta":-311.22,"total70Percentile":0.75,"perStudent70Percentile":0.8181818181818182,"changePercentile":0.3333333333333333},{"university":"ศิลปากร","personnel69":1319.75,"personnel70":1320.03,"personnelChange":0.00021216139420342694,"opInv69":379.5,"opInv70":333.05,"opInvChange":-0.12239789196310932,"total69":1699.25,"total70":1653.08,"change":-0.027170810651758172,"students":32863,"faculty":1236,"perStudent69":51707.086997535225,"perFaculty69":1374797.7346278317,"perStudent70":50302.16352737121,"perFaculty70":1337443.365695793,"perStudentChange":-0.027170810651758193,"perFacultyChange":-0.02717081065175808,"totalDelta":-46.17000000000007,"personnelDelta":0.2799999999999727,"opInvDelta":-46.44999999999999,"total70Percentile":0.4166666666666667,"perStudent70Percentile":0,"changePercentile":0.75},{"university":"สงขลานครินทร์","personnel69":4189.67,"personnel70":4251.93,"personnelChange":0.014860358930417006,"opInv69":1328.36,"opInv70":1058.48,"opInvChange":-0.2031678159535065,"total69":5518.03,"total70":5310.41,"change":-0.03762574686980678,"students":36781,"faculty":2547,"perStudent69":150023.92539626439,"perFaculty69":2166482.1358460933,"perStudent70":144379.16315488974,"perFaculty70":2084966.62740479,"perStudentChange":-0.03762574686980691,"perFacultyChange":-0.0376257468698068,"totalDelta":-207.6199999999999,"personnelDelta":62.26000000000022,"opInvDelta":-269.8799999999999,"total70Percentile":0.8333333333333334,"perStudent70Percentile":0.7727272727272727,"changePercentile":0.4583333333333333},{"university":"สวนดุสิต","personnel69":698.09,"personnel70":721.26,"personnelChange":0.03319056282141265,"opInv69":430.26,"opInv70":375,"opInvChange":-0.12843397015757912,"total69":1128.35,"total70":1096.26,"change":-0.02843975716754546,"students":9223,"faculty":574,"perStudent69":122340.8869131519,"perFaculty69":1965766.550522648,"perStudent70":118861.54179767972,"perFaculty70":1909860.6271777004,"perStudentChange":-0.028439757167545543,"perFacultyChange":-0.028439757167545432,"totalDelta":-32.08999999999992,"personnelDelta":23.16999999999996,"opInvDelta":-55.25999999999999,"total70Percentile":0.20833333333333334,"perStudent70Percentile":0.5909090909090909,"changePercentile":0.625},{"university":"อุบล","personnel69":602.99,"personnel70":705.64,"personnelChange":0.1702349956052339,"opInv69":263.84,"opInv70":178.04,"opInvChange":-0.3251970891449363,"total69":866.8299999999999,"total70":883.68,"change":0.019438644255505722,"students":17113,"faculty":731,"perStudent69":50653.30450534681,"perFaculty69":1185813.953488372,"perStudent70":51637.93607199205,"perFaculty70":1208864.5690834473,"perStudentChange":0.019438644255505677,"perFacultyChange":0.019438644255505677,"totalDelta":16.850000000000023,"personnelDelta":102.64999999999998,"opInvDelta":-85.79999999999998,"total70Percentile":0.16666666666666666,"perStudent70Percentile":0.045454545454545456,"changePercentile":1},{"university":"สถาบันการพยาบาลศรีสวรินทิราฯ","personnel69":129.67,"personnel70":125.86,"personnelChange":-0.02938227809053743,"opInv69":229.46,"opInv70":214.27,"opInvChange":-0.06619890176937156,"total69":359.13,"total70":340.13,"change":-0.05290563305766714,"students":880,"faculty":100,"perStudent69":408102.2727272727,"perFaculty69":3591300,"perStudent70":386511.36363636365,"perFaculty70":3401300,"perStudentChange":-0.052905633057667045,"perFacultyChange":-0.052905633057667156,"totalDelta":-19,"personnelDelta":-3.809999999999988,"opInvDelta":-15.189999999999998,"total70Percentile":0.08333333333333333,"perStudent70Percentile":0.9090909090909091,"changePercentile":0.16666666666666666},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","personnel69":29.68,"personnel70":30.39,"personnelChange":0.023921832884097063,"opInv69":178.45,"opInv70":124.31,"opInvChange":-0.30339030540767714,"total69":208.13,"total70":154.7,"change":-0.25671455340412247,"students":125,"faculty":13,"perStudent69":1665040,"perFaculty69":16010000,"perStudent70":1237600,"perFaculty70":11900000,"perStudentChange":-0.2567145534041224,"perFacultyChange":-0.2567145534041224,"totalDelta":-53.43000000000001,"personnelDelta":0.7100000000000009,"opInvDelta":-54.139999999999986,"total70Percentile":0,"perStudent70Percentile":1,"changePercentile":0},{"university":"สถาบันเทคโนโลยีจิตรลดา","personnel69":99.59,"personnel70":100.92,"personnelChange":0.013354754493423018,"opInv69":149.39,"opInv70":136.94,"opInvChange":-0.08333891157373312,"total69":248.98,"total70":237.86,"change":-0.04466222186520996,"students":null,"faculty":null,"perStudent69":null,"perFaculty69":null,"perStudent70":null,"perFaculty70":null,"perStudentChange":-0.04466222186520996,"perFacultyChange":-0.04466222186520996,"totalDelta":-11.119999999999976,"personnelDelta":1.3299999999999983,"opInvDelta":-12.449999999999989,"total70Percentile":0.041666666666666664,"perStudent70Percentile":null,"changePercentile":0.375},{"university":"สจล.","personnel69":1465.45,"personnel70":1481.14,"personnelChange":0.010706608891466822,"opInv69":749.62,"opInv70":683.77,"opInvChange":-0.08784450788399459,"total69":2215.07,"total70":2164.91,"change":-0.0226448825545018,"students":31533,"faculty":1302,"perStudent69":70246.09139631497,"perFaculty69":1701282.6420890938,"perStudent70":68655.37690673264,"perFaculty70":1662757.2964669738,"perStudentChange":-0.022644882554501478,"perFacultyChange":-0.0226448825545017,"totalDelta":-50.16000000000031,"personnelDelta":15.690000000000055,"opInvDelta":-65.85000000000002,"total70Percentile":0.6666666666666666,"perStudent70Percentile":0.3181818181818182,"changePercentile":0.7916666666666666},{"university":"NIDA","personnel69":405.39,"personnel70":411.94,"personnelChange":0.01615728064333114,"opInv69":248.8,"opInv70":223.91,"opInvChange":-0.10004019292604507,"total69":654.19,"total70":635.85,"change":-0.028034668827099207,"students":null,"faculty":null,"perStudent69":null,"perFaculty69":null,"perStudent70":null,"perFaculty70":null,"perStudentChange":-0.028034668827099207,"perFacultyChange":-0.028034668827099207,"totalDelta":-18.340000000000032,"personnelDelta":6.550000000000011,"opInvDelta":-24.890000000000015,"total70Percentile":0.125,"perStudent70Percentile":null,"changePercentile":0.6666666666666666}]}</script>
+  <script>
+    const DATA = JSON.parse(document.getElementById('budgetData').textContent);
+    const state = { denom: 'student', query: '' };
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+    const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    const finite = (value) => Number.isFinite(value);
+    const fmt0 = (value) => finite(value) ? Math.round(value).toLocaleString('th-TH') : 'ไม่มีข้อมูล';
+    const fmt1 = (value) => finite(value) ? value.toLocaleString('th-TH', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) : 'ไม่มีข้อมูล';
+    const fmt2 = (value) => finite(value) ? value.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : 'ไม่มีข้อมูล';
+    const pct = (value, digits = 1) => finite(value) ? (value * 100).toLocaleString('th-TH', { minimumFractionDigits: digits, maximumFractionDigits: digits }) + '%' : 'ไม่มีข้อมูล';
+    const moneyMB = (value) => finite(value) ? fmt1(value) + ' ลบ.' : 'ไม่มีข้อมูล';
+    const bahtFull = (mb) => finite(mb) ? Math.round(mb * 1000000).toLocaleString('th-TH') + ' บาท' : 'ไม่มีข้อมูล';
+    const perFull = (value) => finite(value) ? Math.round(value).toLocaleString('th-TH') + ' บาท/คน' : 'ไม่มีข้อมูล';
+    const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    const records = DATA.records;
+
+    function themeButtonLabel() {
+      const current = document.documentElement.getAttribute('data-theme') || 'brief';
+      const target = current === 'brief' ? 'midnight' : 'brief';
+      const btn = $('#themeToggle');
+      btn.innerHTML = target === 'midnight' ? '<span aria-hidden="true">☾</span><span>มืด</span>' : '<span aria-hidden="true">☀</span><span>สว่าง</span>';
+      btn.setAttribute('aria-label', target === 'midnight' ? 'สลับเป็นธีมมืด' : 'สลับเป็นธีมสว่าง');
+    }
+    $('#themeToggle').addEventListener('click', () => {
+      const el = document.documentElement;
+      const next = (el.getAttribute('data-theme') || 'brief') === 'brief' ? 'midnight' : 'brief';
+      el.classList.add('theme-switching');
+      el.setAttribute('data-theme', next);
+      void el.offsetWidth;
+      el.classList.remove('theme-switching');
+      try { localStorage.setItem('kmutt-theme', next); } catch (err) {}
+      themeButtonLabel();
+      renderCharts();
+    });
+    themeButtonLabel();
+
+    function showTip(html, event) {
+      const tip = $('#tooltip');
+      tip.innerHTML = html;
+      tip.style.opacity = '1';
+      moveTip(event);
+    }
+    function moveTip(event) {
+      const tip = $('#tooltip');
+      if (tip.style.opacity !== '1') return;
+      const pad = 14;
+      const rect = tip.getBoundingClientRect();
+      let x = event.clientX + 14;
+      let y = event.clientY + 14;
+      if (x + rect.width + pad > window.innerWidth) x = event.clientX - rect.width - 14;
+      if (y + rect.height + pad > window.innerHeight) y = event.clientY - rect.height - 14;
+      tip.style.left = Math.max(pad, x) + 'px';
+      tip.style.top = Math.max(pad, y) + 'px';
+    }
+    function hideTip() {
+      $('#tooltip').style.opacity = '0';
+    }
+    document.addEventListener('mouseover', (event) => {
+      const target = event.target.closest('[data-tip]');
+      if (!target) return;
+      showTip('<div class="tt-title">' + esc(target.dataset.tipTitle || 'ตัวเลขเต็ม') + '</div><div class="tt-num">' + esc(target.dataset.tip) + '</div>', event);
+    });
+    document.addEventListener('mousemove', moveTip);
+    document.addEventListener('mouseout', (event) => {
+      if (event.target.closest('[data-tip]')) hideTip();
+    });
+
+    function renderBudgetStory() {
+      const rows = [
+        { label: 'งบรวม 2569', value: DATA.totals.total69, kind: 'base' },
+        { label: 'บุคลากร', value: DATA.totals.personnelDelta, kind: 'good' },
+        { label: 'ดำเนินงาน + ลงทุน', value: DATA.totals.opInvDelta, kind: 'bad' },
+        { label: 'สุทธิ 2570*', value: DATA.totals.total70, kind: 'base' },
+      ];
+      const maxDelta = Math.max(...rows.map((row) => Math.abs(row.value)));
+      const deltaMax = Math.max(Math.abs(DATA.totals.personnelDelta), Math.abs(DATA.totals.opInvDelta));
+      $('#budgetStory').innerHTML = rows.map((row) => {
+        const isDelta = row.kind !== 'base';
+        const percent = isDelta ? Math.max(5, Math.abs(row.value) / deltaMax * 48) : Math.max(26, row.value / maxDelta * 100);
+        const zero = isDelta ? 50 : 0;
+        const style = isDelta
+          ? (row.value >= 0 ? `left:${zero}%;width:${percent}%` : `right:${100 - zero}%;width:${percent}%`)
+          : `left:0;width:${percent}%`;
+        const sign = isDelta && row.value > 0 ? '+' : '';
+        return `<div class="story-row">
+          <div class="story-label">${esc(row.label)}</div>
+          <div class="cmpbar" aria-hidden="true">
+            ${isDelta ? `<span class="zero" style="left:${zero}%"></span>` : ''}
+            <span class="fill ${row.value >= 0 ? 'good' : ''}" style="${style}"></span>
+          </div>
+          <div class="story-value ${row.value < 0 ? 'neg' : row.value > 0 && isDelta ? 'pos' : ''}" data-tip="${esc(isDelta ? bahtFull(row.value) : bahtFull(row.value))}" data-tip-title="${esc(row.label)}">${sign}${moneyMB(row.value)}</div>
+        </div>`;
+      }).join('');
+    }
+
+    function extent(items, key) {
+      const vals = items.map((item) => item[key]).filter(finite);
+      return [Math.min(...vals), Math.max(...vals)];
+    }
+    function xScale(value, min, max, left, width) {
+      return left + ((value - min) / (max - min || 1)) * width;
+    }
+    function yScale(value, min, max, top, height) {
+      return top + height - ((value - min) / (max - min || 1)) * height;
+    }
+    function renderMatrix() {
+      const svg = $('#matrixChart');
+      const denom = state.denom;
+      const yKey = denom === 'student' ? 'perStudent70' : 'perFaculty70';
+      const nKey = denom === 'student' ? 'students' : 'faculty';
+      const medianY = denom === 'student' ? DATA.medians.perStudent70 : DATA.medians.perFaculty70;
+      const valid = records.filter((record) => finite(record.total70) && finite(record[yKey]) && finite(record[nKey]));
+      const [xMinRaw, xMaxRaw] = extent(valid, 'total70');
+      const [yMinRaw, yMaxRaw] = extent(valid, yKey);
+      const [nMin, nMax] = extent(valid, nKey);
+      const xMin = 0;
+      const xMax = xMaxRaw * 1.05;
+      const yMin = 0;
+      const yMax = yMaxRaw * 1.08;
+      const W = 980, H = 460, left = 80, right = 34, top = 28, bottom = 58;
+      const cw = W - left - right, ch = H - top - bottom;
+      const medianX = DATA.medians.total70;
+      const xTicks = [0, 2500, 5000, 7500, 10000, 12500, 15000].filter((tick) => tick <= xMax);
+      const yTicks = denom === 'student'
+        ? [0, 250000, 500000, 750000, 1000000, 1250000].filter((tick) => tick <= yMax)
+        : [0, 3000000, 6000000, 9000000, 12000000].filter((tick) => tick <= yMax);
+      $('#matrixHeading').textContent = denom === 'student' ? 'งบรวมเทียบงบต่อนักศึกษา' : 'งบรวมเทียบงบต่ออาจารย์';
+      $('#matrixSub').textContent = denom === 'student'
+        ? 'เส้นอ้างอิง: มัธยฐานงบรวม 1,971.7 ลบ. และงบต่อนักศึกษา 111,019 บ./คน'
+        : 'เส้นอ้างอิง: มัธยฐานงบรวม 1,971.7 ลบ. และงบต่ออาจารย์ 1,996,805 บ./คน';
+      const axis = [
+        `<rect x="${left}" y="${top}" width="${cw}" height="${ch}" fill="transparent"></rect>`,
+        ...xTicks.map((tick) => `<line class="tick-line" x1="${xScale(tick, xMin, xMax, left, cw)}" y1="${top}" x2="${xScale(tick, xMin, xMax, left, cw)}" y2="${top + ch}"></line><text class="label-text" x="${xScale(tick, xMin, xMax, left, cw)}" y="${top + ch + 25}" text-anchor="middle">${tick === 0 ? '0' : fmt0(tick)}</text>`),
+        ...yTicks.map((tick) => `<line class="tick-line" x1="${left}" y1="${yScale(tick, yMin, yMax, top, ch)}" x2="${left + cw}" y2="${yScale(tick, yMin, yMax, top, ch)}"></line><text class="label-text" x="${left - 9}" y="${yScale(tick, yMin, yMax, top, ch) + 4}" text-anchor="end">${tick >= 1000000 ? fmt1(tick / 1000000) + 'm' : fmt0(tick / 1000) + 'k'}</text>`),
+        `<line class="axis-line" x1="${left}" y1="${top + ch}" x2="${left + cw}" y2="${top + ch}"></line>`,
+        `<line class="axis-line" x1="${left}" y1="${top}" x2="${left}" y2="${top + ch}"></line>`,
+        `<line x1="${xScale(medianX, xMin, xMax, left, cw)}" y1="${top}" x2="${xScale(medianX, xMin, xMax, left, cw)}" y2="${top + ch}" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 5"></line>`,
+        `<line x1="${left}" y1="${yScale(medianY, yMin, yMax, top, ch)}" x2="${left + cw}" y2="${yScale(medianY, yMin, yMax, top, ch)}" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 5"></line>`,
+        `<text class="label-text" x="${left + cw}" y="${top + ch + 48}" text-anchor="end">งบประมาณรวม 2570* (ล้านบาท)</text>`,
+        `<text class="label-text" x="${left - 58}" y="${top - 8}" text-anchor="start">${denom === 'student' ? 'บาท/นักศึกษา' : 'บาท/อาจารย์'}</text>`
+      ];
+      const points = valid.map((record) => {
+        const x = xScale(record.total70, xMin, xMax, left, cw);
+        const y = yScale(record[yKey], yMin, yMax, top, ch);
+        const r = 5 + Math.sqrt((record[nKey] - nMin) / (nMax - nMin || 1)) * 17;
+        const fill = record.change <= -0.05 ? 'var(--red)' : record.change > 0 ? 'var(--green)' : 'var(--amber)';
+        const stroke = record.perStudent70Percentile >= .9 || record.total70Percentile >= .9 ? 'var(--txt)' : 'var(--card)';
+        const tip = `${record.university}\nงบรวม 70*: ${moneyMB(record.total70)}\n${denom === 'student' ? 'งบ/นศ.' : 'งบ/อจ.'} 70*: ${perFull(record[yKey])}\nเปลี่ยนแปลง: ${pct(record.change, 2)}\nตัวหาร: ${fmt0(record[nKey])} คน`;
+        const label = (record.university === 'มหิดล' || record.university === 'สถาบันดนตรีกัลยาณิวัฒนา' || record.university === 'อุบล')
+          ? `<text class="label-text" x="${x + r + 5}" y="${y + 4}">${esc(record.university)}</text>`
+          : '';
+        return `<g>
+          <circle class="point" tabindex="0" cx="${x}" cy="${y}" r="${r}" fill="${fill}" fill-opacity=".78" stroke="${stroke}" stroke-width="1.5" data-tip="${esc(tip).replace(/\n/g, '<br>')}" data-tip-title="${esc(record.university)}"></circle>
+          ${label}
+        </g>`;
+      }).join('');
+      svg.innerHTML = axis.join('') + points;
+    }
+
+    function renderRank(containerId, items, valueFn, formatFn, danger = false) {
+      const max = Math.max(...items.map(valueFn).map(Math.abs));
+      $('#' + containerId).innerHTML = items.map((item, index) => {
+        const value = valueFn(item);
+        const width = Math.max(4, Math.abs(value) / max * 100);
+        return `<div class="rank-item">
+          <div class="rank-no">${String(index + 1).padStart(2, '0')}</div>
+          <div class="rank-name" title="${esc(item.university)}">${esc(item.university)}</div>
+          <div class="rank-val ${danger ? 'neg' : ''}">${formatFn(value)}</div>
+          <div class="rankbar"><span style="width:${width}%;${danger ? 'background:var(--red)' : ''}"></span></div>
+        </div>`;
+      }).join('');
+    }
+    function renderRanks() {
+      renderRank('rankTotal', [...records].sort((a, b) => b.total70 - a.total70).slice(0, 6), (r) => r.total70, moneyMB);
+      renderRank('rankStudent', records.filter((r) => finite(r.perStudent70)).sort((a, b) => b.perStudent70 - a.perStudent70).slice(0, 6), (r) => r.perStudent70, (v) => fmt0(v));
+      renderRank('rankDrop', [...records].sort((a, b) => a.change - b.change).slice(0, 6), (r) => r.change, (v) => pct(v, 2), true);
+    }
+
+    function quadrant(record) {
+      if (!finite(record.total70) || !finite(record.perStudent70)) return 'ข้อมูลต่อหัวไม่ครบ';
+      const big = record.total70 >= DATA.medians.total70;
+      const high = record.perStudent70 >= DATA.medians.perStudent70;
+      if (big && high) return 'งบใหญ่ / ต่อหัวสูง';
+      if (big && !high) return 'งบใหญ่ / ต่อหัวต่ำ';
+      if (!big && high) return 'งบเล็ก / ต่อหัวสูง';
+      return 'งบเล็ก / ต่อหัวต่ำ';
+    }
+    function flags(record) {
+      const out = [];
+      if (!finite(record.students) || !finite(record.faculty)) out.push(['danger', 'ไม่มี headcount']);
+      if (record.change <= -0.05) out.push(['danger', 'งบลดเกิน 5%']);
+      if (record.change > 0) out.push(['good', 'งบรวมเพิ่ม']);
+      if (record.perStudent70Percentile >= .9) out.push(['warn', 'งบ/นศ. outlier สูง']);
+      if (record.total70Percentile >= .9) out.push(['warn', 'งบรวมขนาดใหญ่']);
+      return out.length ? out : [['good', 'อยู่ในช่วงปกติของชุดข้อมูล']];
+    }
+    function rowDetail(record) {
+      const cause = Math.abs(record.opInvDelta) > Math.abs(record.personnelDelta)
+        ? 'แรงเปลี่ยนแปลงหลักมาจากหมวดดำเนินงาน + ลงทุน'
+        : 'แรงเปลี่ยนแปลงหลักมาจากหมวดบุคลากร';
+      const totalMax = Math.max(...records.map((r) => r.total70));
+      const perMax = Math.max(...records.map((r) => r.perStudent70).filter(finite));
+      const deltaMax = Math.max(...records.map((r) => Math.abs(r.change)));
+      return `<div class="detail-grid">
+        <div>
+          <div class="flags">${flags(record).map(([kind, label]) => `<span class="flag ${kind}">${esc(label)}</span>`).join('')}</div>
+          <div class="fl ${record.change <= -0.05 ? 'danger' : record.change > 0 ? 'good' : ''}">
+            <strong>${esc(record.university)}:</strong> ${esc(cause)}; อยู่ในกลุ่ม <strong>${esc(quadrant(record))}</strong>. งบต่อหัว 69→70 เปลี่ยนเท่ากับงบรวม เพราะใช้จำนวน headcount ชุดเดียวกันในตัวหารทั้งสองปี
+          </div>
+        </div>
+        <div class="mini-spark">
+          <div class="spark-line"><span>งบ 70*</span><span class="spark-track"><span class="spark-fill" style="width:${Math.max(2, record.total70 / totalMax * 100)}%"></span></span><span>${moneyMB(record.total70)}</span></div>
+          <div class="spark-line"><span>งบ/นศ.</span><span class="spark-track"><span class="spark-fill good" style="width:${finite(record.perStudent70) ? Math.max(2, record.perStudent70 / perMax * 100) : 0}%"></span></span><span>${finite(record.perStudent70) ? fmt0(record.perStudent70) : '-'}</span></div>
+          <div class="spark-line"><span>Δ%</span><span class="spark-track"><span class="spark-fill ${record.change > 0 ? 'good' : ''}" style="width:${Math.max(2, Math.abs(record.change) / deltaMax * 100)}%;${record.change < 0 ? 'background:var(--red)' : ''}"></span></span><span>${pct(record.change, 2)}</span></div>
+        </div>
+      </div>`;
+    }
+    function renderTable() {
+      const q = state.query.trim().toLocaleLowerCase('th-TH');
+      const filtered = records
+        .filter((record) => !q || record.university.toLocaleLowerCase('th-TH').includes(q))
+        .sort((a, b) => b.total70 - a.total70);
+      $('#dataBody').innerHTML = filtered.map((record, index) => {
+        const rowId = 'detail-' + index;
+        const pctClass = record.change < 0 ? 'neg' : 'pos';
+        return `<tr>
+          <td class="name"><button class="row-toggle" type="button" aria-expanded="false" aria-controls="${rowId}">${esc(record.university)} <span class="muted">กางรายละเอียด</span></button></td>
+          <td data-tip="${esc(bahtFull(record.total69))}" data-tip-title="งบ 2569">${moneyMB(record.total69)}</td>
+          <td data-tip="${esc(bahtFull(record.total70))}" data-tip-title="งบ 2570*">${moneyMB(record.total70)}</td>
+          <td class="${pctClass}">${pct(record.change, 2)}</td>
+          <td class="${record.personnelDelta < 0 ? 'neg' : 'pos'}">${moneyMB(record.personnelDelta)}</td>
+          <td class="${record.opInvDelta < 0 ? 'neg' : 'pos'}">${moneyMB(record.opInvDelta)}</td>
+          <td>${finite(record.students) ? fmt0(record.students) : '-'}</td>
+          <td>${finite(record.faculty) ? fmt0(record.faculty) : '-'}</td>
+          <td data-tip="${esc(perFull(record.perStudent70))}" data-tip-title="งบต่อนักศึกษา 2570*">${finite(record.perStudent70) ? fmt0(record.perStudent70) : '-'}</td>
+          <td data-tip="${esc(perFull(record.perFaculty70))}" data-tip-title="งบต่ออาจารย์ 2570*">${finite(record.perFaculty70) ? fmt0(record.perFaculty70) : '-'}</td>
+        </tr>
+        <tr class="det-row" id="${rowId}"><td colspan="10">${rowDetail(record)}</td></tr>`;
+      }).join('');
+      $$('.row-toggle').forEach((button) => {
+        button.addEventListener('click', () => {
+          const detail = document.getElementById(button.getAttribute('aria-controls'));
+          const open = detail.classList.toggle('on');
+          button.setAttribute('aria-expanded', String(open));
+        });
+      });
+    }
+    $('#searchBox').addEventListener('input', (event) => {
+      state.query = event.target.value;
+      renderTable();
+    });
+
+    $$('.seg button').forEach((button) => {
+      button.addEventListener('click', () => {
+        state.denom = button.dataset.denom;
+        $$('.seg button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        renderMatrix();
+      });
+    });
+
+    function renderCharts() {
+      renderMatrix();
+    }
+    renderBudgetStory();
+    renderRanks();
+    renderTable();
+    renderCharts();
+    if (document.fonts) document.fonts.ready.then(renderCharts);
+  </script>
+</body>
+</html>
