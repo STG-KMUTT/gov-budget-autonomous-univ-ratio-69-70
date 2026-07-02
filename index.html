@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="รายงานวิเคราะห์งบประมาณที่ได้รับและงบต่อหัวของมหาวิทยาลัยในกำกับของรัฐ ปีงบประมาณ 2569 ถึง 2570">
-  <title>งบประมาณที่ได้รับและ ratio ต่อหัว 69→70 | มหาวิทยาลัยในกำกับ</title>
+  <title>งบประมาณที่ได้รับและงบต่อหัว 69→70 | มหาวิทยาลัยในกำกับ</title>
   <link rel="icon" href="data:,">
   <script>
     (function () {
@@ -82,15 +82,22 @@
     .skip {
       position: fixed;
       left: 16px;
-      top: -80px;
+      top: 16px;
       z-index: 1200;
       background: var(--modal-bg);
       color: var(--txt);
       border: 1px solid var(--border-strong);
       border-radius: var(--radius);
       padding: 10px 14px;
+      transform: translateY(-140%);
+      opacity: 0;
+      pointer-events: none;
     }
-    .skip:focus { top: 16px; }
+    .skip:focus {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
     .wrap { max-width: 1160px; padding: 30px 26px 80px; margin: 0 auto; }
     .theme-toggle {
       position: fixed;
@@ -381,6 +388,23 @@
       justify-content: space-between;
       align-items: start;
     }
+    .chart-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px 12px;
+    }
+    .control-block {
+      display: inline-grid;
+      gap: 4px;
+    }
+    .control-label {
+      color: var(--dim);
+      font-size: 10.5px;
+      line-height: 1;
+      padding-left: 7px;
+    }
     .seg {
       display: inline-flex;
       border: 1px solid var(--border-strong);
@@ -404,6 +428,25 @@
       background: var(--txt);
       color: var(--bg);
     }
+    .check-control {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      background: var(--btn-bg);
+      padding: 7px 11px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 12px;
+    }
+    .check-control input {
+      width: 15px;
+      height: 15px;
+      accent-color: var(--amber);
+    }
     .chart-frame {
       position: relative;
       min-height: 440px;
@@ -415,6 +458,12 @@
       width: 100%;
       height: auto;
       min-height: 390px;
+    }
+    .chart-note {
+      padding: 0 18px 15px;
+      color: var(--dim);
+      font-size: 11.5px;
+      line-height: 1.6;
     }
     .axis text,
     .label-text {
@@ -712,7 +761,7 @@
       .chart-frame { min-height: 360px; }
     }
     @media print {
-      .theme-toggle, .nav-left, .seg, .search, .row-toggle .hint { display: none !important; }
+      .theme-toggle, .nav-left, .seg, .check-control, .search, .row-toggle .hint { display: none !important; }
       body { background: #fff; color: #000; }
       .wrap { max-width: none; padding: 18px; }
       .panel, details.grp { break-inside: avoid; box-shadow: none; }
@@ -736,13 +785,13 @@
       </nav>
       <div class="hero" id="main">
         <div>
-          <h1>งบประมาณที่ได้รับและ ratio ต่อหัว ปีงบประมาณ 2569 → 2570*</h1>
-          <p class="hsub">รายงานนี้จัดภาพรวมก่อนแล้วค่อยเปิดให้เจาะรายสถาบัน โดยเน้น 2 คำถามหลัก: งบประมาณที่ได้รับเปลี่ยนอย่างไร และเมื่อนำไปเทียบกับจำนวนนักศึกษา/อาจารย์แล้ว “ความเข้มข้นต่อหัว” อยู่ตรงไหนของระบบ</p>
+          <h1>งบประมาณที่ได้รับ และงบต่อหัว ปีงบประมาณ 2569 → 2570*</h1>
+          <p class="hsub">อ่านหน้านี้จากบนลงล่าง: เริ่มจากงบรวมทั้งระบบ แยกว่าเงินลดจากหมวดใด แล้วค่อยเทียบรายสถาบันว่า “ได้รับงบมากแค่ไหน” และ “เมื่อนับต่อคนแล้วอยู่สูงหรือต่ำกว่ากลุ่มเดียวกันอย่างไร”</p>
         </div>
         <div class="headline-fact">
           <div class="label">ข้อค้นพบหลัก</div>
           <div class="value">-3.95<span> % งบรวมทั้งระบบ</span></div>
-          <div class="note">แรงกดหลักมาจากงบดำเนินงาน + ลงทุน ไม่ใช่งบบุคลากร</div>
+          <div class="note">ภาพรวมลดลงเพราะหมวดดำเนินงาน + ลงทุนหดตัว แม้งบบุคลากรยังเพิ่ม</div>
         </div>
       </div>
     </header>
@@ -771,10 +820,10 @@
       <div class="kpi">
         <div class="label">มัธยฐานงบ/นักศึกษา 2570*</div>
         <div class="num">111,019<span> บ./คน</span></div>
-        <div class="foot">ไม่รวมแถวที่ไม่มี headcount</div>
+        <div class="foot">คำนวณจาก 23 สถาบันที่มีจำนวนคนครบ</div>
       </div>
       <div class="kpi">
-        <div class="label">งบรวม vs งบ/นักศึกษา</div>
+        <div class="label">งบรวม vs งบต่อนักศึกษา</div>
         <div class="num">0.004<span> r</span></div>
         <div class="foot">แทบไม่สัมพันธ์กัน</div>
       </div>
@@ -783,19 +832,19 @@
     <section aria-labelledby="story-title">
       <div class="section-head">
         <div class="section-no">01</div>
-        <h2 id="story-title">งบลดแบบมีโครงสร้าง: บุคลากรเพิ่ม แต่หมวดดำเนินงานและลงทุนถูกกดลง</h2>
+        <h2 id="story-title">งบลดแบบมีที่มา: งบบุคลากรเพิ่ม แต่เงินสำหรับดำเนินงานและลงทุนลดมากกว่า</h2>
       </div>
-      <p class="section-lede">การอ่านงบรวมอย่างเดียวทำให้เห็นเพียงการลดลงสุทธิ แต่เมื่อแยกองค์ประกอบจะเห็นว่าแรงลดแทบทั้งหมดมาจากหมวดดำเนินงาน + ลงทุน ขณะที่งบบุคลากรรวมยังเพิ่มขึ้น</p>
+      <p class="section-lede">ถ้าดูแค่ยอดรวมจะเห็นว่าเงินลดลง แต่จะยังไม่รู้ว่าลดจากส่วนไหน การแยกหมวดทำให้เห็นภาพลึกกว่า: ระบบยังเพิ่มงบบุคลากร แต่ตัดงบดำเนินงานและลงทุนมากพอจนยอดรวมทั้งระบบติดลบ</p>
       <div class="panel-grid">
         <div class="panel">
-          <h3>Decomposition ของงบ 2569 → 2570*</h3>
-          <div class="panel-sub">แถบยาวเทียบกับช่วงเปลี่ยนแปลงใหญ่สุดในหน่วยล้านบาท</div>
+          <h3>แยกที่มาของการเปลี่ยนแปลงงบ 2569 → 2570*</h3>
+          <div class="panel-sub">แถบกลางคือจุดเริ่มต้นของการเปลี่ยนแปลง: ไปทางขวาคือเพิ่ม ไปทางซ้ายคือลด</div>
           <div class="storyline" id="budgetStory"></div>
         </div>
         <div class="panel finding-list">
-          <div class="fl danger"><strong>ประเด็นที่ 1:</strong> งบรวมลด -3,052.9 ลบ. แม้หมวดบุคลากรเพิ่ม +956.0 ลบ. หมายความว่าแรงตัดจริงถูกดูดซับอยู่ในงบดำเนินงานและลงทุน</div>
-          <div class="fl danger"><strong>ประเด็นที่ 2:</strong> สถาบันดนตรีกัลยาณิวัฒนาถูกจัดเป็น outlier ฝั่งงบลดหนัก (-25.67%) และงบต่อหัวสูงมากเพราะฐานนักศึกษามีขนาดเล็ก</div>
-          <div class="fl good"><strong>ประเด็นที่ 3:</strong> อุบลเป็น outlier ฝั่งบวก (+1.94%) แต่ยังอยู่ในกลุ่มงบต่อหัวนักศึกษาต่ำสุดของชุดข้อมูล</div>
+          <div class="fl danger"><strong>อ่านแบบลึกขึ้น:</strong> งบรวมลด -3,052.9 ลบ. ทั้งที่งบบุคลากรเพิ่ม +956.0 ลบ. แปลว่าแรงกดอยู่ที่งบที่ใช้ขับเคลื่อนงานประจำและการลงทุนระยะต่อไป</div>
+          <div class="fl danger"><strong>ระวังการอ่านงบต่อหัว:</strong> สถาบันขนาดเล็กอาจมีงบต่อหัวสูงมาก ไม่ได้แปลว่าได้รับงบรวมมากกว่าเสมอ จึงต้องอ่านคู่กับจำนวนคนในตัวหาร</div>
+          <div class="fl good"><strong>อ่านสัญญาณบวกให้ครบ:</strong> อุบลเป็นสถาบันเดียวที่งบรวมเพิ่ม (+1.94%) แต่ยังอยู่ในกลุ่มงบต่อนักศึกษาต่ำ แปลว่า “เพิ่มขึ้น” ไม่ได้เท่ากับ “อยู่ในระดับสูง”</div>
         </div>
       </div>
     </section>
@@ -803,23 +852,37 @@
     <section id="matrix" aria-labelledby="matrix-title">
       <div class="section-head">
         <div class="section-no">02</div>
-        <h2 id="matrix-title">เมทริกซ์งบรวมกับงบต่อหัว: ขนาดงบไม่ใช่ตัวแทนความเข้มข้นต่อหัว</h2>
+        <h2 id="matrix-title">เมทริกซ์งบรวมกับงบต่อหัว: แยก “ได้รับงบมาก” ออกจาก “งบต่อคนสูง”</h2>
       </div>
-      <p class="section-lede">ใช้จุดแต่ละจุดแทนสถาบัน แกน X คือ งบรวม 2570* แกน Y คือ งบต่อหัว และขนาดจุดแทนจำนวนคนในตัวหาร เพื่อแยก “งบใหญ่” ออกจาก “งบต่อหัวสูง”</p>
+      <p class="section-lede">จุดแต่ละจุดคือหนึ่งสถาบัน แกน X คือเงินงบประมาณรวมที่ได้รับในปี 2570* แกน Y คือเงินต่อคน และขนาดจุดคือจำนวนคนในตัวหาร กราฟนี้ช่วยบอกว่าสถาบันใด “งบรวมใหญ่” แต่ต่อหัวไม่สูง หรือ “งบรวมเล็ก” แต่ต่อหัวสูงเพราะฐานคนเล็ก</p>
       <div class="panel chart-panel">
         <div class="chart-toolbar">
           <div>
             <h3 id="matrixHeading">งบรวมเทียบงบต่อนักศึกษา</h3>
-            <div class="panel-sub" id="matrixSub">เส้นอ้างอิงคือมัธยฐานของชุดข้อมูล</div>
+            <div class="panel-sub" id="matrixSub">เส้นประคือค่ากลางของกลุ่มที่มีข้อมูลจำนวนคนครบ</div>
           </div>
-          <div class="seg" role="group" aria-label="เลือกตัวหาร">
-            <button type="button" data-denom="student" aria-pressed="true">นักศึกษา</button>
-            <button type="button" data-denom="faculty" aria-pressed="false">อาจารย์</button>
+          <div class="chart-controls">
+            <div class="control-block">
+              <span class="control-label">ตัวหาร</span>
+              <div class="seg" role="group" aria-label="เลือกตัวหาร">
+                <button type="button" data-denom="student" aria-pressed="true">นักศึกษา</button>
+                <button type="button" data-denom="faculty" aria-pressed="false">อาจารย์</button>
+              </div>
+            </div>
+            <div class="control-block">
+              <span class="control-label">แกน X/Y</span>
+              <div class="seg" role="group" aria-label="เลือกสเกลแกนกราฟ">
+                <button type="button" data-axis="full" aria-pressed="true">แกนเต็ม</button>
+                <button type="button" data-axis="core" aria-pressed="false">ซูมกลุ่มหลัก</button>
+              </div>
+            </div>
+            <label class="check-control"><input id="hideOutliers" type="checkbox"> ซ่อนจุดสุดโต่ง</label>
           </div>
         </div>
         <div class="chart-frame">
           <svg class="chart" id="matrixChart" viewBox="0 0 980 460" role="img" aria-labelledby="matrixHeading matrixSub"></svg>
         </div>
+        <div class="chart-note" id="matrixNote"></div>
       </div>
       <div class="rank-grid" aria-label="ตารางอันดับสรุป">
         <div class="rank-panel">
@@ -843,15 +906,15 @@
     <section id="deep-dive" aria-labelledby="deep-title">
       <div class="section-head">
         <div class="section-no">03</div>
-        <h2 id="deep-title">Deep dive รายสถาบัน: เปิดแถวเพื่อดูเหตุผลและธงวิเคราะห์</h2>
+        <h2 id="deep-title">เจาะรายสถาบัน: อ่านตัวเลขหลักพร้อมเหตุผลของการเปลี่ยนแปลง</h2>
       </div>
-      <p class="section-lede">ตารางนี้คงตัวเลขหลักไว้ให้ตรวจสอบได้ และเพิ่มแถว drill-down สำหรับอ่านเหตุผล เช่น สัดส่วนการลดลงมาจากหมวดใด สถาบันอยู่ quadrant ใด และมีข้อมูลต่อหัวขาดหายหรือไม่</p>
+      <p class="section-lede">ตารางนี้แสดงเฉพาะสถาบันที่มีจำนวนนักศึกษาและอาจารย์ครบ เพื่อไม่ให้การอ่านงบต่อหัวปะปนกับข้อมูลที่คำนวณไม่ได้ สถาบันที่ขาดจำนวนคนจะระบุไว้ในหมายเหตุท้ายรายงานแทน</p>
       <details class="grp" open>
-        <summary><span class="chev" aria-hidden="true">›</span><strong>ตารางวิเคราะห์ 25 สถาบัน</strong><span class="muted">คลิกชื่อสถาบันเพื่อกางรายละเอียด</span></summary>
+        <summary><span class="chev" aria-hidden="true">›</span><strong>ตารางวิเคราะห์ 23 สถาบันที่มีข้อมูลจำนวนคนครบ</strong><span class="muted">คลิกชื่อสถาบันเพื่อกางรายละเอียด</span></summary>
         <div class="inside">
           <div class="table-tools">
             <input class="search" id="searchBox" type="search" placeholder="ค้นหาชื่อสถาบัน" aria-label="ค้นหาชื่อสถาบัน">
-            <div class="asof">ตัวเลขเงินหน่วยหลักเป็นล้านบาท · hover เพื่อดูบาทเต็ม</div>
+            <div class="asof">ตัวเลขเงินหน่วยหลักเป็นล้านบาท · hover เพื่อดูบาทเต็ม · ไม่รวม 2 สถาบันที่ไม่มีจำนวนคน</div>
           </div>
           <div class="table-wrap">
             <table>
@@ -878,7 +941,7 @@
 
     <footer class="method">
       <p><strong>นิยาม:</strong> 2570* อ้างอิงมติ ครม. 2 มิ.ย. 2569; งบต่อหัวคำนวณจากงบประมาณรวมคูณ 1,000,000 หารด้วยจำนวนนักศึกษาหรืออาจารย์จาก Google Form <code>sustainable_ratio_2026-07-02.csv</code></p>
-      <p><strong>ข้อจำกัด:</strong> หากจำนวนนักศึกษา/อาจารย์ไม่มีใน Mapping ระบบจะแสดงเป็นไม่มีข้อมูล และไม่ใช้ในการคำนวณงบต่อหัวหรือเมทริกซ์ต่อหัว</p>
+      <p><strong>ข้อจำกัด:</strong> กราฟและตารางต่อหัวไม่แสดงสถาบันที่ไม่มีจำนวนนักศึกษา/อาจารย์ ได้แก่ <strong>สถาบันเทคโนโลยีจิตรลดา</strong> และ <strong>NIDA</strong> เพราะไม่สามารถคำนวณงบต่อหัวได้อย่างตรวจสอบได้</p>
       <p><strong>แหล่งไฟล์:</strong> <code>20260602 Gov Budget to Autonomous Univ - Sum V2_with_ratio_69_70.xlsx</code> และ <code>sustainable_ratio_2026-07-02.csv</code></p>
     </footer>
   </div>
@@ -886,7 +949,7 @@
   <script id="budgetData" type="application/json">{"generatedAt":"2026-07-02","asOf":"2 ก.ค. 2569","budgetResolution":"มติ ครม. 2 มิ.ย. 2569","totals":{"total69":77336.87000000002,"total70":74283.97,"totalDelta":-3052.9,"totalChange":-0.039475349855767616,"personnelDelta":956.0200000000007,"opInvDelta":-4008.92},"medians":{"total70":1971.71,"change":-0.03617258602649397,"perStudent70":111019.30372684667,"perFaculty70":1996804.6283934135},"quartiles":{"total70":{"q1":1173.91,"q3":4552.26},"change":{"q1":-0.04824514290215633,"q3":-0.027170810651758172},"perStudent70":{"q1":63663.22844262264,"q3":141340.78554345053},"perFaculty70":{"q1":1785851.4983196417,"q3":2442667.9569611545}},"correlations":{"total70VsPerStudent70":0.004218342944059852,"total70VsPerFaculty70":-0.09634453477730162,"studentsVsPerStudent70":-0.39702259916640753,"facultyVsPerFaculty70":-0.25009399325116694,"changeVsPerStudent70":-0.9073290645733957},"quadrants":{"bigBudgetHighIntensity":["จุฬาลงกรณ์","ขอนแก่น","เชียงใหม่","มทส.","มหิดล","แม่ฟ้าหลวง","มศว.","สงขลานครินทร์"],"bigBudgetLowIntensity":["เกษตรศาสตร์","มจพ.","ธรรมศาสตร์","บูรพา","สจล."],"smallBudgetHighIntensity":["วลัยลักษณ์","สวนดุสิต","สถาบันการพยาบาลศรีสวรินทิราฯ","สถาบันดนตรีกัลยาณิวัฒนา"],"smallBudgetLowIntensity":["ทักษิณ","มจธ.","พะเยา","แม่โจ้","ศิลปากร","อุบล","สถาบันเทคโนโลยีจิตรลดา","NIDA"]},"outliers":{"total70":{"key":"total70","q1":1173.91,"q3":4552.26,"low":-3893.6150000000007,"high":9619.785,"outliers":[{"university":"มหิดล","value":14458.82}]},"change":{"key":"change","q1":-0.04824514290215633,"q3":-0.027170810651758172,"low":-0.07985664127775356,"high":0.004440687723839064,"outliers":[{"university":"อุบล","value":0.019438644255505722},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","value":-0.25671455340412247}]},"perStudent70":{"key":"perStudent70","q1":63663.22844262264,"q3":141340.78554345053,"low":-52853.1072086192,"high":257857.1211946924,"outliers":[{"university":"มหิดล","value":405133.79472666647},{"university":"สถาบันการพยาบาลศรีสวรินทิราฯ","value":386511.36363636365},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","value":1237600}]},"perFaculty70":{"key":"perFaculty70","q1":1785851.4983196417,"q3":2442667.9569611545,"low":800626.8103573725,"high":3427892.6449234234,"outliers":[{"university":"มทส.","value":3644523.8095238092},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","value":11900000}]}},"records":[{"university":"จุฬาลงกรณ์","personnel69":4536.74,"personnel70":4575.66,"personnelChange":0.008578847366170438,"opInv69":1541.62,"opInv70":1282.83,"opInvChange":-0.16786886521970393,"total69":6078.36,"total70":5858.49,"change":-0.03617258602649397,"students":42360,"faculty":3099,"perStudent69":143492.9178470255,"perFaculty69":1961393.9980638917,"perStudent70":138302.40793201132,"perFaculty70":1890445.3049370765,"perStudentChange":-0.03617258602649409,"perFacultyChange":-0.03617258602649398,"totalDelta":-219.8699999999999,"personnelDelta":38.92000000000007,"opInvDelta":-258.78999999999996,"total70Percentile":0.875,"perStudent70Percentile":0.7272727272727273,"changePercentile":0.5},{"university":"เกษตรศาสตร์","personnel69":3858.17,"personnel70":3952.2,"personnelChange":0.02437165806587054,"opInv69":2131.97,"opInv70":1998.89,"opInvChange":-0.06242114101042684,"total69":5990.139999999999,"total70":5951.09,"change":-0.00651904629941859,"students":74800,"faculty":3296,"perStudent69":80082.08556149731,"perFaculty69":1817396.844660194,"perStudent70":79560.02673796791,"perFaculty70":1805549.150485437,"perStudentChange":-0.006519046299418574,"perFacultyChange":-0.006519046299418574,"totalDelta":-39.04999999999927,"personnelDelta":94.02999999999975,"opInvDelta":-133.0799999999997,"total70Percentile":0.9166666666666666,"perStudent70Percentile":0.36363636363636365,"changePercentile":0.9166666666666666},{"university":"ขอนแก่น","personnel69":3939.21,"personnel70":3936.64,"personnelChange":-0.0006524150781502291,"opInv69":1578.13,"opInv70":1223.23,"opInvChange":-0.22488641620145366,"total69":5517.34,"total70":5159.87,"change":-0.06479027937375624,"students":39164,"faculty":2035,"perStudent69":140877.8470023491,"perFaculty69":2711223.587223587,"perStudent70":131750.3319374936,"perFaculty70":2535562.6535626533,"perStudentChange":-0.06479027937375625,"perFacultyChange":-0.06479027937375625,"totalDelta":-357.47000000000025,"personnelDelta":-2.5700000000001637,"opInvDelta":-354.9000000000001,"total70Percentile":0.7916666666666666,"perStudent70Percentile":0.6363636363636364,"changePercentile":0.08333333333333333},{"university":"เชียงใหม่","personnel69":4814.92,"personnel70":4869.19,"personnelChange":0.011271215305757837,"opInv69":1367.68,"opInv70":1141.53,"opInvChange":-0.1653530065512401,"total69":6182.6,"total70":6010.719999999999,"change":-0.027800601688610132,"students":33489,"faculty":2558,"perStudent69":184615.8440084804,"perFaculty69":2416966.379984363,"perStudent70":179483.41246379405,"perFaculty70":2349773.2603596556,"perStudentChange":-0.027800601688610094,"perFacultyChange":-0.027800601688610205,"totalDelta":-171.88000000000102,"personnelDelta":54.26999999999953,"opInvDelta":-226.1500000000001,"total70Percentile":0.9583333333333334,"perStudent70Percentile":0.8636363636363636,"changePercentile":0.7083333333333334},{"university":"ทักษิณ","personnel69":912.04,"personnel70":924.26,"personnelChange":0.01339853515196705,"opInv69":297.42,"opInv70":249.65,"opInvChange":-0.1606146190572255,"total69":1209.46,"total70":1173.91,"change":-0.029393282952722664,"students":20315,"faculty":534,"perStudent69":59535.31873000246,"perFaculty69":2264906.3670411985,"perStudent70":57785.38026089097,"perFaculty70":2198333.3333333335,"perStudentChange":-0.029393282952722588,"perFacultyChange":-0.0293932829527227,"totalDelta":-35.549999999999955,"personnelDelta":12.220000000000027,"opInvDelta":-47.77000000000001,"total70Percentile":0.25,"perStudent70Percentile":0.09090909090909091,"changePercentile":0.5833333333333334},{"university":"มจธ.","personnel69":1112.77,"personnel70":1141.02,"personnelChange":0.025387097064083323,"opInv69":492.78,"opInv70":443.22,"opInvChange":-0.10057226348471925,"total69":1605.55,"total70":1584.24,"change":-0.013272710286194728,"students":15500,"faculty":897,"perStudent69":103583.87096774194,"perFaculty69":1789910.8138238573,"perStudent70":102209.03225806452,"perFaculty70":1766153.8461538462,"perStudentChange":-0.013272710286194811,"perFacultyChange":-0.0132727102861947,"totalDelta":-21.309999999999945,"personnelDelta":28.25,"opInvDelta":-49.559999999999945,"total70Percentile":0.375,"perStudent70Percentile":0.45454545454545453,"changePercentile":0.8333333333333334},{"university":"มจพ.","personnel69":1610.78,"personnel70":1629.51,"personnelChange":0.011627906976744198,"opInv69":505.76,"opInv70":459.62,"opInvChange":-0.09122904144258144,"total69":2116.54,"total70":2089.13,"change":-0.012950381282659367,"students":33572,"faculty":1138,"perStudent69":63044.79923745979,"perFaculty69":1859876.9771528998,"perStudent70":62228.34504944597,"perFaculty70":1835790.8611599298,"perStudentChange":-0.012950381282659462,"perFacultyChange":-0.012950381282659351,"totalDelta":-27.409999999999854,"personnelDelta":18.730000000000018,"opInvDelta":-46.139999999999986,"total70Percentile":0.625,"perStudent70Percentile":0.18181818181818182,"changePercentile":0.875},{"university":"มทส.","personnel69":1186.06,"personnel70":1238.05,"personnelChange":0.043834207375680834,"opInv69":924.36,"opInv70":751.86,"opInvChange":-0.1866156043100091,"total69":2110.42,"total70":1989.9099999999999,"change":-0.05710237772576085,"students":17924,"faculty":546,"perStudent69":117742.69136353492,"perFaculty69":3865238.095238095,"perStudent70":111019.30372684667,"perFaculty70":3644523.8095238092,"perStudentChange":-0.05710237772576077,"perFacultyChange":-0.05710237772576077,"totalDelta":-120.51000000000022,"personnelDelta":51.99000000000001,"opInvDelta":-172.5,"total70Percentile":0.5416666666666666,"perStudent70Percentile":0.5,"changePercentile":0.125},{"university":"ธรรมศาสตร์","personnel69":3158,"personnel70":3156.96,"personnelChange":-0.0003293223559214578,"opInv69":1679.9,"opInv70":1329.86,"opInvChange":-0.2083695458062981,"total69":4837.9,"total70":4486.82,"change":-0.0725686764918663,"students":44235,"faculty":2247,"perStudent69":109368.14739459704,"perFaculty69":2153048.5091232755,"perStudent70":101431.44568780377,"perFaculty70":1996804.6283934135,"perStudentChange":-0.07256867649186627,"perFacultyChange":-0.07256867649186627,"totalDelta":-351.0799999999999,"personnelDelta":-1.0399999999999636,"opInvDelta":-350.0400000000002,"total70Percentile":0.7083333333333334,"perStudent70Percentile":0.4090909090909091,"changePercentile":0.041666666666666664},{"university":"บูรพา","personnel69":1549.86,"personnel70":1601.88,"personnelChange":0.033564321938755894,"opInv69":434.32,"opInv70":369.83,"opInvChange":-0.14848498802726104,"total69":1984.1799999999998,"total70":1971.71,"change":-0.006284712072493323,"students":30782,"faculty":1463,"perStudent69":64459.0994737184,"perFaculty69":1356240.6015037592,"perStudent70":64053.992593073875,"perFaculty70":1347717.019822283,"perStudentChange":-0.00628471207249337,"perFacultyChange":-0.006284712072493259,"totalDelta":-12.4699999999998,"personnelDelta":52.02000000000021,"opInvDelta":-64.49000000000001,"total70Percentile":0.5,"perStudent70Percentile":0.2727272727272727,"changePercentile":0.9583333333333334},{"university":"พะเยา","personnel69":898.69,"personnel70":935.55,"personnelChange":0.04101525553861721,"opInv69":497.72,"opInv70":393.49,"opInvChange":-0.20941493209033193,"total69":1396.41,"total70":1329.04,"change":-0.04824514290215633,"students":22604,"faculty":966,"perStudent69":61777.119093965666,"perFaculty69":1445559.0062111802,"perStudent70":58796.67315519377,"perFaculty70":1375817.8053830229,"perStudentChange":-0.0482451429021562,"perFacultyChange":-0.0482451429021562,"totalDelta":-67.37000000000012,"personnelDelta":36.8599999999999,"opInvDelta":-104.23000000000002,"total70Percentile":0.2916666666666667,"perStudent70Percentile":0.13636363636363635,"changePercentile":0.25},{"university":"มหิดล","personnel69":10804.83,"personnel70":10954.78,"personnelChange":0.013878052685697112,"opInv69":4412.79,"opInv70":3504.04,"opInvChange":-0.2059354739291922,"total69":15217.619999999999,"total70":14458.82,"change":-0.049863250626576254,"students":35689,"faculty":4266,"perStudent69":426395.24783546745,"perFaculty69":3567187.0604781993,"perStudent70":405133.79472666647,"perFaculty70":3389315.518049695,"perStudentChange":-0.04986325062657615,"perFacultyChange":-0.04986325062657626,"totalDelta":-758.7999999999993,"personnelDelta":149.95000000000073,"opInvDelta":-908.75,"total70Percentile":1,"perStudent70Percentile":0.9545454545454546,"changePercentile":0.20833333333333334},{"university":"แม่โจ้","personnel69":991.61,"personnel70":1011.48,"personnelChange":0.02003811982533456,"opInv69":463.79,"opInv70":388.36,"opInvChange":-0.16263826300696438,"total69":1455.4,"total70":1399.8400000000001,"change":-0.0381750721451147,"students":22124,"faculty":655,"perStudent69":65783.76423793165,"perFaculty69":2221984.7328244275,"perStudent70":63272.46429217141,"perFaculty70":2137160.305343512,"perStudentChange":-0.03817507214511451,"perFacultyChange":-0.03817507214511451,"totalDelta":-55.559999999999945,"personnelDelta":19.870000000000005,"opInvDelta":-75.43,"total70Percentile":0.3333333333333333,"perStudent70Percentile":0.22727272727272727,"changePercentile":0.4166666666666667},{"university":"แม่ฟ้าหลวง","personnel69":1461.46,"personnel70":1534.07,"personnelChange":0.049683193518809884,"opInv69":655.91,"opInv70":508.01,"opInvChange":-0.22548825296153432,"total69":2117.37,"total70":2042.08,"change":-0.03555826331722843,"students":14931,"faculty":785,"perStudent69":141810.32750653004,"perFaculty69":2697286.6242038216,"perStudent70":136767.79853995043,"perFaculty70":2601375.796178344,"perStudentChange":-0.035558263317228556,"perFacultyChange":-0.035558263317228334,"totalDelta":-75.28999999999996,"personnelDelta":72.6099999999999,"opInvDelta":-147.89999999999998,"total70Percentile":0.5833333333333334,"perStudent70Percentile":0.6818181818181818,"changePercentile":0.5416666666666666},{"university":"วลัยลักษณ์","personnel69":1113.5,"personnel70":1153.23,"personnelChange":0.03568028738212844,"opInv69":723.99,"opInv70":595.93,"opInvChange":-0.17688089614497446,"total69":1837.49,"total70":1749.1599999999999,"change":-0.048071009910258096,"students":15523,"faculty":877,"perStudent69":118372.09302325582,"perFaculty69":2095199.543899658,"perStudent70":112681.82696643689,"perFaculty70":1994481.185860889,"perStudentChange":-0.048071009910258145,"perFacultyChange":-0.048071009910258145,"totalDelta":-88.33000000000015,"personnelDelta":39.73000000000002,"opInvDelta":-128.06000000000006,"total70Percentile":0.4583333333333333,"perStudent70Percentile":0.5454545454545454,"changePercentile":0.2916666666666667},{"university":"มศว.","personnel69":2734.16,"personnel70":2815.51,"personnelChange":0.029753196594200913,"opInv69":2047.97,"opInv70":1736.75,"opInvChange":-0.15196511667651383,"total69":4782.13,"total70":4552.26,"change":-0.04806853849644403,"students":31388,"faculty":2034,"perStudent69":152355.3587358226,"perFaculty69":2351096.361848574,"perStudent70":145031.8593092902,"perFaculty70":2238082.5958702066,"perStudentChange":-0.04806853849644399,"perFacultyChange":-0.04806853849644399,"totalDelta":-229.8699999999999,"personnelDelta":81.35000000000036,"opInvDelta":-311.22,"total70Percentile":0.75,"perStudent70Percentile":0.8181818181818182,"changePercentile":0.3333333333333333},{"university":"ศิลปากร","personnel69":1319.75,"personnel70":1320.03,"personnelChange":0.00021216139420342694,"opInv69":379.5,"opInv70":333.05,"opInvChange":-0.12239789196310932,"total69":1699.25,"total70":1653.08,"change":-0.027170810651758172,"students":32863,"faculty":1236,"perStudent69":51707.086997535225,"perFaculty69":1374797.7346278317,"perStudent70":50302.16352737121,"perFaculty70":1337443.365695793,"perStudentChange":-0.027170810651758193,"perFacultyChange":-0.02717081065175808,"totalDelta":-46.17000000000007,"personnelDelta":0.2799999999999727,"opInvDelta":-46.44999999999999,"total70Percentile":0.4166666666666667,"perStudent70Percentile":0,"changePercentile":0.75},{"university":"สงขลานครินทร์","personnel69":4189.67,"personnel70":4251.93,"personnelChange":0.014860358930417006,"opInv69":1328.36,"opInv70":1058.48,"opInvChange":-0.2031678159535065,"total69":5518.03,"total70":5310.41,"change":-0.03762574686980678,"students":36781,"faculty":2547,"perStudent69":150023.92539626439,"perFaculty69":2166482.1358460933,"perStudent70":144379.16315488974,"perFaculty70":2084966.62740479,"perStudentChange":-0.03762574686980691,"perFacultyChange":-0.0376257468698068,"totalDelta":-207.6199999999999,"personnelDelta":62.26000000000022,"opInvDelta":-269.8799999999999,"total70Percentile":0.8333333333333334,"perStudent70Percentile":0.7727272727272727,"changePercentile":0.4583333333333333},{"university":"สวนดุสิต","personnel69":698.09,"personnel70":721.26,"personnelChange":0.03319056282141265,"opInv69":430.26,"opInv70":375,"opInvChange":-0.12843397015757912,"total69":1128.35,"total70":1096.26,"change":-0.02843975716754546,"students":9223,"faculty":574,"perStudent69":122340.8869131519,"perFaculty69":1965766.550522648,"perStudent70":118861.54179767972,"perFaculty70":1909860.6271777004,"perStudentChange":-0.028439757167545543,"perFacultyChange":-0.028439757167545432,"totalDelta":-32.08999999999992,"personnelDelta":23.16999999999996,"opInvDelta":-55.25999999999999,"total70Percentile":0.20833333333333334,"perStudent70Percentile":0.5909090909090909,"changePercentile":0.625},{"university":"อุบล","personnel69":602.99,"personnel70":705.64,"personnelChange":0.1702349956052339,"opInv69":263.84,"opInv70":178.04,"opInvChange":-0.3251970891449363,"total69":866.8299999999999,"total70":883.68,"change":0.019438644255505722,"students":17113,"faculty":731,"perStudent69":50653.30450534681,"perFaculty69":1185813.953488372,"perStudent70":51637.93607199205,"perFaculty70":1208864.5690834473,"perStudentChange":0.019438644255505677,"perFacultyChange":0.019438644255505677,"totalDelta":16.850000000000023,"personnelDelta":102.64999999999998,"opInvDelta":-85.79999999999998,"total70Percentile":0.16666666666666666,"perStudent70Percentile":0.045454545454545456,"changePercentile":1},{"university":"สถาบันการพยาบาลศรีสวรินทิราฯ","personnel69":129.67,"personnel70":125.86,"personnelChange":-0.02938227809053743,"opInv69":229.46,"opInv70":214.27,"opInvChange":-0.06619890176937156,"total69":359.13,"total70":340.13,"change":-0.05290563305766714,"students":880,"faculty":100,"perStudent69":408102.2727272727,"perFaculty69":3591300,"perStudent70":386511.36363636365,"perFaculty70":3401300,"perStudentChange":-0.052905633057667045,"perFacultyChange":-0.052905633057667156,"totalDelta":-19,"personnelDelta":-3.809999999999988,"opInvDelta":-15.189999999999998,"total70Percentile":0.08333333333333333,"perStudent70Percentile":0.9090909090909091,"changePercentile":0.16666666666666666},{"university":"สถาบันดนตรีกัลยาณิวัฒนา","personnel69":29.68,"personnel70":30.39,"personnelChange":0.023921832884097063,"opInv69":178.45,"opInv70":124.31,"opInvChange":-0.30339030540767714,"total69":208.13,"total70":154.7,"change":-0.25671455340412247,"students":125,"faculty":13,"perStudent69":1665040,"perFaculty69":16010000,"perStudent70":1237600,"perFaculty70":11900000,"perStudentChange":-0.2567145534041224,"perFacultyChange":-0.2567145534041224,"totalDelta":-53.43000000000001,"personnelDelta":0.7100000000000009,"opInvDelta":-54.139999999999986,"total70Percentile":0,"perStudent70Percentile":1,"changePercentile":0},{"university":"สถาบันเทคโนโลยีจิตรลดา","personnel69":99.59,"personnel70":100.92,"personnelChange":0.013354754493423018,"opInv69":149.39,"opInv70":136.94,"opInvChange":-0.08333891157373312,"total69":248.98,"total70":237.86,"change":-0.04466222186520996,"students":null,"faculty":null,"perStudent69":null,"perFaculty69":null,"perStudent70":null,"perFaculty70":null,"perStudentChange":-0.04466222186520996,"perFacultyChange":-0.04466222186520996,"totalDelta":-11.119999999999976,"personnelDelta":1.3299999999999983,"opInvDelta":-12.449999999999989,"total70Percentile":0.041666666666666664,"perStudent70Percentile":null,"changePercentile":0.375},{"university":"สจล.","personnel69":1465.45,"personnel70":1481.14,"personnelChange":0.010706608891466822,"opInv69":749.62,"opInv70":683.77,"opInvChange":-0.08784450788399459,"total69":2215.07,"total70":2164.91,"change":-0.0226448825545018,"students":31533,"faculty":1302,"perStudent69":70246.09139631497,"perFaculty69":1701282.6420890938,"perStudent70":68655.37690673264,"perFaculty70":1662757.2964669738,"perStudentChange":-0.022644882554501478,"perFacultyChange":-0.0226448825545017,"totalDelta":-50.16000000000031,"personnelDelta":15.690000000000055,"opInvDelta":-65.85000000000002,"total70Percentile":0.6666666666666666,"perStudent70Percentile":0.3181818181818182,"changePercentile":0.7916666666666666},{"university":"NIDA","personnel69":405.39,"personnel70":411.94,"personnelChange":0.01615728064333114,"opInv69":248.8,"opInv70":223.91,"opInvChange":-0.10004019292604507,"total69":654.19,"total70":635.85,"change":-0.028034668827099207,"students":null,"faculty":null,"perStudent69":null,"perFaculty69":null,"perStudent70":null,"perFaculty70":null,"perStudentChange":-0.028034668827099207,"perFacultyChange":-0.028034668827099207,"totalDelta":-18.340000000000032,"personnelDelta":6.550000000000011,"opInvDelta":-24.890000000000015,"total70Percentile":0.125,"perStudent70Percentile":null,"changePercentile":0.6666666666666666}]}</script>
   <script>
     const DATA = JSON.parse(document.getElementById('budgetData').textContent);
-    const state = { denom: 'student', query: '' };
+    const state = { denom: 'student', query: '', axisMode: 'full', hideOutliers: false };
 
     const $ = (selector, root = document) => root.querySelector(selector);
     const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
@@ -901,6 +964,28 @@
     const perFull = (value) => finite(value) ? Math.round(value).toLocaleString('th-TH') + ' บาท/คน' : 'ไม่มีข้อมูล';
     const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
     const records = DATA.records;
+    const hasPeople = (record) => finite(record.students) && finite(record.faculty);
+    const displayRecords = records.filter(hasPeople);
+    const missingPeople = records.filter((record) => !hasPeople(record));
+    const outlierKeys = { student: 'perStudent70', faculty: 'perFaculty70' };
+
+    function outlierNamesFor(denom) {
+      const key = outlierKeys[denom];
+      return new Set((DATA.outliers[key]?.outliers || []).map((item) => item.university));
+    }
+    function isSelectedOutlier(record, denom = state.denom) {
+      return outlierNamesFor(denom).has(record.university);
+    }
+    function niceTicks(max, target = 6) {
+      if (!finite(max) || max <= 0) return [0];
+      const raw = max / Math.max(1, target - 1);
+      const pow = Math.pow(10, Math.floor(Math.log10(raw)));
+      const step = (raw / pow <= 1 ? 1 : raw / pow <= 2 ? 2 : raw / pow <= 5 ? 5 : 10) * pow;
+      const limit = Math.ceil(max / step) * step;
+      const ticks = [];
+      for (let value = 0; value <= limit + step * 0.25; value += step) ticks.push(Math.round(value));
+      return ticks;
+    }
 
     function themeButtonLabel() {
       const current = document.documentElement.getAttribute('data-theme') || 'brief';
@@ -997,10 +1082,17 @@
       const yKey = denom === 'student' ? 'perStudent70' : 'perFaculty70';
       const nKey = denom === 'student' ? 'students' : 'faculty';
       const medianY = denom === 'student' ? DATA.medians.perStudent70 : DATA.medians.perFaculty70;
-      const valid = records.filter((record) => finite(record.total70) && finite(record[yKey]) && finite(record[nKey]));
-      const [xMinRaw, xMaxRaw] = extent(valid, 'total70');
-      const [yMinRaw, yMaxRaw] = extent(valid, yKey);
-      const [nMin, nMax] = extent(valid, nKey);
+      const valid = displayRecords.filter((record) => finite(record.total70) && finite(record[yKey]) && finite(record[nKey]));
+      const selectedOutliers = outlierNamesFor(denom);
+      const totalOutliers = new Set((DATA.outliers.total70?.outliers || []).map((item) => item.university));
+      let candidate = state.hideOutliers ? valid.filter((record) => !selectedOutliers.has(record.university)) : valid;
+      let chartRecords = state.axisMode === 'core'
+        ? candidate.filter((record) => !selectedOutliers.has(record.university) && !totalOutliers.has(record.university))
+        : candidate;
+      if (!chartRecords.length) chartRecords = candidate.length ? candidate : valid;
+      const [xMinRaw, xMaxRaw] = extent(chartRecords, 'total70');
+      const [yMinRaw, yMaxRaw] = extent(chartRecords, yKey);
+      const [nMin, nMax] = extent(chartRecords, nKey);
       const xMin = 0;
       const xMax = xMaxRaw * 1.05;
       const yMin = 0;
@@ -1008,39 +1100,45 @@
       const W = 980, H = 460, left = 80, right = 34, top = 28, bottom = 58;
       const cw = W - left - right, ch = H - top - bottom;
       const medianX = DATA.medians.total70;
-      const xTicks = [0, 2500, 5000, 7500, 10000, 12500, 15000].filter((tick) => tick <= xMax);
-      const yTicks = denom === 'student'
-        ? [0, 250000, 500000, 750000, 1000000, 1250000].filter((tick) => tick <= yMax)
-        : [0, 3000000, 6000000, 9000000, 12000000].filter((tick) => tick <= yMax);
+      const xTicks = niceTicks(xMax, 6);
+      const yTicks = niceTicks(yMax, 6);
       $('#matrixHeading').textContent = denom === 'student' ? 'งบรวมเทียบงบต่อนักศึกษา' : 'งบรวมเทียบงบต่ออาจารย์';
       $('#matrixSub').textContent = denom === 'student'
-        ? 'เส้นอ้างอิง: มัธยฐานงบรวม 1,971.7 ลบ. และงบต่อนักศึกษา 111,019 บ./คน'
-        : 'เส้นอ้างอิง: มัธยฐานงบรวม 1,971.7 ลบ. และงบต่ออาจารย์ 1,996,805 บ./คน';
-      const axis = [
-        `<rect x="${left}" y="${top}" width="${cw}" height="${ch}" fill="transparent"></rect>`,
-        ...xTicks.map((tick) => `<line class="tick-line" x1="${xScale(tick, xMin, xMax, left, cw)}" y1="${top}" x2="${xScale(tick, xMin, xMax, left, cw)}" y2="${top + ch}"></line><text class="label-text" x="${xScale(tick, xMin, xMax, left, cw)}" y="${top + ch + 25}" text-anchor="middle">${tick === 0 ? '0' : fmt0(tick)}</text>`),
-        ...yTicks.map((tick) => `<line class="tick-line" x1="${left}" y1="${yScale(tick, yMin, yMax, top, ch)}" x2="${left + cw}" y2="${yScale(tick, yMin, yMax, top, ch)}"></line><text class="label-text" x="${left - 9}" y="${yScale(tick, yMin, yMax, top, ch) + 4}" text-anchor="end">${tick >= 1000000 ? fmt1(tick / 1000000) + 'm' : fmt0(tick / 1000) + 'k'}</text>`),
-        `<line class="axis-line" x1="${left}" y1="${top + ch}" x2="${left + cw}" y2="${top + ch}"></line>`,
-        `<line class="axis-line" x1="${left}" y1="${top}" x2="${left}" y2="${top + ch}"></line>`,
-        `<line x1="${xScale(medianX, xMin, xMax, left, cw)}" y1="${top}" x2="${xScale(medianX, xMin, xMax, left, cw)}" y2="${top + ch}" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 5"></line>`,
-        `<line x1="${left}" y1="${yScale(medianY, yMin, yMax, top, ch)}" x2="${left + cw}" y2="${yScale(medianY, yMin, yMax, top, ch)}" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 5"></line>`,
-        `<text class="label-text" x="${left + cw}" y="${top + ch + 48}" text-anchor="end">งบประมาณรวม 2570* (ล้านบาท)</text>`,
-        `<text class="label-text" x="${left - 58}" y="${top - 8}" text-anchor="start">${denom === 'student' ? 'บาท/นักศึกษา' : 'บาท/อาจารย์'}</text>`
+        ? 'เส้นประคือค่ากลาง: งบรวม 1,971.7 ลบ. และงบต่อนักศึกษา 111,019 บ./คน'
+        : 'เส้นประคือค่ากลาง: งบรวม 1,971.7 ลบ. และงบต่ออาจารย์ 1,996,805 บ./คน';
+      const hiddenByOutlierToggle = state.hideOutliers ? valid.filter((record) => selectedOutliers.has(record.university)) : [];
+      const hiddenByAxis = state.axisMode === 'core'
+        ? candidate.filter((record) => !chartRecords.some((shown) => shown.university === record.university))
+        : [];
+      const note = [
+        'แสดง ' + chartRecords.length + ' จาก ' + valid.length + ' สถาบันที่มีจำนวนนักศึกษาและอาจารย์ครบ',
+        'ไม่รวมในกราฟ: ' + missingPeople.map((record) => record.university).join(', ') + ' เพราะไม่มีจำนวนคนสำหรับคำนวณต่อหัว'
       ];
-      const points = valid.map((record) => {
+      if (hiddenByOutlierToggle.length) note.push('ซ่อนจุดสุดโต่ง: ' + hiddenByOutlierToggle.map((record) => record.university).join(', '));
+      if (hiddenByAxis.length) note.push('โหมดซูมกลุ่มหลักตัดจุดนอกแกนออกชั่วคราว: ' + hiddenByAxis.map((record) => record.university).join(', '));
+      $('#matrixNote').textContent = note.join(' · ');
+      const axis = [
+        '<rect x="' + left + '" y="' + top + '" width="' + cw + '" height="' + ch + '" fill="transparent"></rect>',
+        ...xTicks.map((tick) => '<line class="tick-line" x1="' + xScale(tick, xMin, xMax, left, cw) + '" y1="' + top + '" x2="' + xScale(tick, xMin, xMax, left, cw) + '" y2="' + (top + ch) + '"></line><text class="label-text" x="' + xScale(tick, xMin, xMax, left, cw) + '" y="' + (top + ch + 25) + '" text-anchor="middle">' + (tick === 0 ? '0' : fmt0(tick)) + '</text>'),
+        ...yTicks.map((tick) => '<line class="tick-line" x1="' + left + '" y1="' + yScale(tick, yMin, yMax, top, ch) + '" x2="' + (left + cw) + '" y2="' + yScale(tick, yMin, yMax, top, ch) + '"></line><text class="label-text" x="' + (left - 9) + '" y="' + (yScale(tick, yMin, yMax, top, ch) + 4) + '" text-anchor="end">' + (tick >= 1000000 ? fmt1(tick / 1000000) + 'm' : tick >= 1000 ? fmt0(tick / 1000) + 'k' : fmt0(tick)) + '</text>'),
+        '<line class="axis-line" x1="' + left + '" y1="' + (top + ch) + '" x2="' + (left + cw) + '" y2="' + (top + ch) + '"></line>',
+        '<line class="axis-line" x1="' + left + '" y1="' + top + '" x2="' + left + '" y2="' + (top + ch) + '"></line>',
+        medianX <= xMax ? '<line x1="' + xScale(medianX, xMin, xMax, left, cw) + '" y1="' + top + '" x2="' + xScale(medianX, xMin, xMax, left, cw) + '" y2="' + (top + ch) + '" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 5"></line>' : '',
+        medianY <= yMax ? '<line x1="' + left + '" y1="' + yScale(medianY, yMin, yMax, top, ch) + '" x2="' + (left + cw) + '" y2="' + yScale(medianY, yMin, yMax, top, ch) + '" stroke="var(--teal)" stroke-width="2" stroke-dasharray="5 5"></line>' : '',
+        '<text class="label-text" x="' + (left + cw) + '" y="' + (top + ch + 48) + '" text-anchor="end">งบประมาณรวม 2570* (ล้านบาท)</text>',
+        '<text class="label-text" x="' + (left - 58) + '" y="' + (top - 8) + '" text-anchor="start">' + (denom === 'student' ? 'บาท/นักศึกษา' : 'บาท/อาจารย์') + '</text>'
+      ];
+      const points = chartRecords.map((record) => {
         const x = xScale(record.total70, xMin, xMax, left, cw);
         const y = yScale(record[yKey], yMin, yMax, top, ch);
         const r = 5 + Math.sqrt((record[nKey] - nMin) / (nMax - nMin || 1)) * 17;
         const fill = record.change <= -0.05 ? 'var(--red)' : record.change > 0 ? 'var(--green)' : 'var(--amber)';
-        const stroke = record.perStudent70Percentile >= .9 || record.total70Percentile >= .9 ? 'var(--txt)' : 'var(--card)';
-        const tip = `${record.university}\nงบรวม 70*: ${moneyMB(record.total70)}\n${denom === 'student' ? 'งบ/นศ.' : 'งบ/อจ.'} 70*: ${perFull(record[yKey])}\nเปลี่ยนแปลง: ${pct(record.change, 2)}\nตัวหาร: ${fmt0(record[nKey])} คน`;
+        const stroke = selectedOutliers.has(record.university) || totalOutliers.has(record.university) ? 'var(--txt)' : 'var(--card)';
+        const tip = record.university + '<br>งบรวม 70*: ' + moneyMB(record.total70) + '<br>' + (denom === 'student' ? 'งบ/นศ.' : 'งบ/อจ.') + ' 70*: ' + perFull(record[yKey]) + '<br>เปลี่ยนแปลง: ' + pct(record.change, 2) + '<br>ตัวหาร: ' + fmt0(record[nKey]) + ' คน';
         const label = (record.university === 'มหิดล' || record.university === 'สถาบันดนตรีกัลยาณิวัฒนา' || record.university === 'อุบล')
-          ? `<text class="label-text" x="${x + r + 5}" y="${y + 4}">${esc(record.university)}</text>`
+          ? '<text class="label-text" x="' + (x + r + 5) + '" y="' + (y + 4) + '">' + esc(record.university) + '</text>'
           : '';
-        return `<g>
-          <circle class="point" tabindex="0" cx="${x}" cy="${y}" r="${r}" fill="${fill}" fill-opacity=".78" stroke="${stroke}" stroke-width="1.5" data-tip="${esc(tip).replace(/\n/g, '<br>')}" data-tip-title="${esc(record.university)}"></circle>
-          ${label}
-        </g>`;
+        return '<g><circle class="point" tabindex="0" cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + fill + '" fill-opacity=".78" stroke="' + stroke + '" stroke-width="1.5" data-tip="' + esc(tip) + '" data-tip-title="' + esc(record.university) + '"></circle>' + label + '</g>';
       }).join('');
       svg.innerHTML = axis.join('') + points;
     }
@@ -1059,9 +1157,9 @@
       }).join('');
     }
     function renderRanks() {
-      renderRank('rankTotal', [...records].sort((a, b) => b.total70 - a.total70).slice(0, 6), (r) => r.total70, moneyMB);
-      renderRank('rankStudent', records.filter((r) => finite(r.perStudent70)).sort((a, b) => b.perStudent70 - a.perStudent70).slice(0, 6), (r) => r.perStudent70, (v) => fmt0(v));
-      renderRank('rankDrop', [...records].sort((a, b) => a.change - b.change).slice(0, 6), (r) => r.change, (v) => pct(v, 2), true);
+      renderRank('rankTotal', [...displayRecords].sort((a, b) => b.total70 - a.total70).slice(0, 6), (r) => r.total70, moneyMB);
+      renderRank('rankStudent', displayRecords.filter((r) => finite(r.perStudent70)).sort((a, b) => b.perStudent70 - a.perStudent70).slice(0, 6), (r) => r.perStudent70, (v) => fmt0(v));
+      renderRank('rankDrop', [...displayRecords].sort((a, b) => a.change - b.change).slice(0, 6), (r) => r.change, (v) => pct(v, 2), true);
     }
 
     function quadrant(record) {
@@ -1075,10 +1173,9 @@
     }
     function flags(record) {
       const out = [];
-      if (!finite(record.students) || !finite(record.faculty)) out.push(['danger', 'ไม่มี headcount']);
       if (record.change <= -0.05) out.push(['danger', 'งบลดเกิน 5%']);
       if (record.change > 0) out.push(['good', 'งบรวมเพิ่ม']);
-      if (record.perStudent70Percentile >= .9) out.push(['warn', 'งบ/นศ. outlier สูง']);
+      if (record.perStudent70Percentile >= .9) out.push(['warn', 'งบต่อนักศึกษาสูงกว่ากลุ่มมาก']);
       if (record.total70Percentile >= .9) out.push(['warn', 'งบรวมขนาดใหญ่']);
       return out.length ? out : [['good', 'อยู่ในช่วงปกติของชุดข้อมูล']];
     }
@@ -1086,14 +1183,14 @@
       const cause = Math.abs(record.opInvDelta) > Math.abs(record.personnelDelta)
         ? 'แรงเปลี่ยนแปลงหลักมาจากหมวดดำเนินงาน + ลงทุน'
         : 'แรงเปลี่ยนแปลงหลักมาจากหมวดบุคลากร';
-      const totalMax = Math.max(...records.map((r) => r.total70));
-      const perMax = Math.max(...records.map((r) => r.perStudent70).filter(finite));
-      const deltaMax = Math.max(...records.map((r) => Math.abs(r.change)));
+      const totalMax = Math.max(...displayRecords.map((r) => r.total70));
+      const perMax = Math.max(...displayRecords.map((r) => r.perStudent70).filter(finite));
+      const deltaMax = Math.max(...displayRecords.map((r) => Math.abs(r.change)));
       return `<div class="detail-grid">
         <div>
           <div class="flags">${flags(record).map(([kind, label]) => `<span class="flag ${kind}">${esc(label)}</span>`).join('')}</div>
           <div class="fl ${record.change <= -0.05 ? 'danger' : record.change > 0 ? 'good' : ''}">
-            <strong>${esc(record.university)}:</strong> ${esc(cause)}; อยู่ในกลุ่ม <strong>${esc(quadrant(record))}</strong>. งบต่อหัว 69→70 เปลี่ยนเท่ากับงบรวม เพราะใช้จำนวน headcount ชุดเดียวกันในตัวหารทั้งสองปี
+            <strong>${esc(record.university)}:</strong> ${esc(cause)}; อยู่ในกลุ่ม <strong>${esc(quadrant(record))}</strong>. หากจำนวนคนในตัวหารไม่เปลี่ยน งบต่อหัวจะขยับในทิศทางเดียวกับงบรวม จึงควรอ่าน “ระดับต่อหัว” คู่กับ “ขนาดฐานคน” เสมอ
           </div>
         </div>
         <div class="mini-spark">
@@ -1105,7 +1202,7 @@
     }
     function renderTable() {
       const q = state.query.trim().toLocaleLowerCase('th-TH');
-      const filtered = records
+      const filtered = displayRecords
         .filter((record) => !q || record.university.toLocaleLowerCase('th-TH').includes(q))
         .sort((a, b) => b.total70 - a.total70);
       $('#dataBody').innerHTML = filtered.map((record, index) => {
@@ -1138,12 +1235,23 @@
       renderTable();
     });
 
-    $$('.seg button').forEach((button) => {
+    $$('[data-denom]').forEach((button) => {
       button.addEventListener('click', () => {
         state.denom = button.dataset.denom;
-        $$('.seg button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        $$('[data-denom]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
         renderMatrix();
       });
+    });
+    $$('[data-axis]').forEach((button) => {
+      button.addEventListener('click', () => {
+        state.axisMode = button.dataset.axis;
+        $$('[data-axis]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        renderMatrix();
+      });
+    });
+    $('#hideOutliers').addEventListener('change', (event) => {
+      state.hideOutliers = event.target.checked;
+      renderMatrix();
     });
 
     function renderCharts() {
