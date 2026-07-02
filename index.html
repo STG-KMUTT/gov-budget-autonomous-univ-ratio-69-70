@@ -500,6 +500,33 @@
       font-family: var(--mono);
       font-variant-numeric: tabular-nums;
     }
+    .tooltip .tt-kicker {
+      color: var(--muted);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+    .tooltip .tt-grid {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      gap: 5px 14px;
+      align-items: baseline;
+      border-top: 1px solid var(--hairline);
+      margin-top: 8px;
+      padding-top: 8px;
+    }
+    .tooltip .tt-label {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .tooltip .tt-value {
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+    .tooltip .tt-value.neg { color: var(--red); }
+    .tooltip .tt-value.pos { color: var(--green); }
     .rank-grid {
       margin-top: 22px;
       display: grid;
@@ -1028,14 +1055,31 @@
     function hideTip() {
       $('#tooltip').style.opacity = '0';
     }
+    function tipRow(label, value, valueClass = '') {
+      const cls = valueClass === 'neg' || valueClass === 'pos' ? ' ' + valueClass : '';
+      return '<div class="tt-label">' + esc(label) + '</div><div class="tt-value' + cls + '">' + esc(value || '-') + '</div>';
+    }
+    function matrixTipHtml(target) {
+      return '<div class="tt-kicker">ข้อมูลจุดในกราฟ</div>'
+        + '<div class="tt-title">' + esc(target.dataset.tipTitle || '-') + '</div>'
+        + '<div class="tt-grid">'
+        + tipRow('งบรวม 2570*', target.dataset.tipBudget)
+        + tipRow(target.dataset.tipPerLabel || 'งบต่อหัว 2570*', target.dataset.tipPer)
+        + tipRow('เปลี่ยนแปลง', target.dataset.tipChange, target.dataset.tipChangeClass || '')
+        + tipRow(target.dataset.tipDenomLabel || 'ตัวหาร', target.dataset.tipDenom)
+        + '</div>';
+    }
     document.addEventListener('mouseover', (event) => {
-      const target = event.target.closest('[data-tip]');
+      const target = event.target.closest('[data-tip], [data-tip-kind]');
       if (!target) return;
-      showTip('<div class="tt-title">' + esc(target.dataset.tipTitle || 'ตัวเลขเต็ม') + '</div><div class="tt-num">' + esc(target.dataset.tip) + '</div>', event);
+      const html = target.dataset.tipKind === 'matrix'
+        ? matrixTipHtml(target)
+        : '<div class="tt-title">' + esc(target.dataset.tipTitle || 'ตัวเลขเต็ม') + '</div><div class="tt-num">' + esc(target.dataset.tip) + '</div>';
+      showTip(html, event);
     });
     document.addEventListener('mousemove', moveTip);
     document.addEventListener('mouseout', (event) => {
-      if (event.target.closest('[data-tip]')) hideTip();
+      if (event.target.closest('[data-tip], [data-tip-kind]')) hideTip();
     });
 
     function renderBudgetStory() {
@@ -1134,11 +1178,13 @@
         const r = 5 + Math.sqrt((record[nKey] - nMin) / (nMax - nMin || 1)) * 17;
         const fill = record.change <= -0.05 ? 'var(--red)' : record.change > 0 ? 'var(--green)' : 'var(--amber)';
         const stroke = selectedOutliers.has(record.university) || totalOutliers.has(record.university) ? 'var(--txt)' : 'var(--card)';
-        const tip = record.university + '<br>งบรวม 70*: ' + moneyMB(record.total70) + '<br>' + (denom === 'student' ? 'งบ/นศ.' : 'งบ/อจ.') + ' 70*: ' + perFull(record[yKey]) + '<br>เปลี่ยนแปลง: ' + pct(record.change, 2) + '<br>ตัวหาร: ' + fmt0(record[nKey]) + ' คน';
+        const perLabel = denom === 'student' ? 'งบต่อนักศึกษา 2570*' : 'งบต่ออาจารย์ 2570*';
+        const denomLabel = denom === 'student' ? 'จำนวนนักศึกษา' : 'จำนวนอาจารย์';
+        const changeClass = record.change < 0 ? 'neg' : record.change > 0 ? 'pos' : '';
         const label = (record.university === 'มหิดล' || record.university === 'สถาบันดนตรีกัลยาณิวัฒนา' || record.university === 'อุบล')
           ? '<text class="label-text" x="' + (x + r + 5) + '" y="' + (y + 4) + '">' + esc(record.university) + '</text>'
           : '';
-        return '<g><circle class="point" tabindex="0" cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + fill + '" fill-opacity=".78" stroke="' + stroke + '" stroke-width="1.5" data-tip="' + esc(tip) + '" data-tip-title="' + esc(record.university) + '"></circle>' + label + '</g>';
+        return '<g><circle class="point" tabindex="0" cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + fill + '" fill-opacity=".78" stroke="' + stroke + '" stroke-width="1.5" data-tip-kind="matrix" data-tip-title="' + esc(record.university) + '" data-tip-budget="' + esc(moneyMB(record.total70)) + '" data-tip-per-label="' + esc(perLabel) + '" data-tip-per="' + esc(perFull(record[yKey])) + '" data-tip-change="' + esc(pct(record.change, 2)) + '" data-tip-change-class="' + esc(changeClass) + '" data-tip-denom-label="' + esc(denomLabel) + '" data-tip-denom="' + esc(fmt0(record[nKey]) + ' คน') + '"></circle>' + label + '</g>';
       }).join('');
       svg.innerHTML = axis.join('') + points;
     }
